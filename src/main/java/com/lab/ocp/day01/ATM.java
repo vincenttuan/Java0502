@@ -18,7 +18,18 @@ public class ATM {
         System.out.println("請選擇服務項目(1~5):");
         Scanner sc = new Scanner(System.in);
         int item = sc.nextInt(); // 取得使用者輸入的數值
-        
+        switch(item) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                
+        }
     }
     
 }

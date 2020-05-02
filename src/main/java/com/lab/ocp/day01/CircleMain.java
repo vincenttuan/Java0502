@@ -2,10 +2,12 @@ package com.lab.ocp.day01;
 
 public class CircleMain {
     public static void main(String[] args) {
+        Circle.name = "圓形";
         Circle c = new Circle();
-        c.name = "圓形";
         c.r = 10;
-        c.area = c.r * c.r * Math.PI;
         c.print();
+        Circle c2 = new Circle();
+        c2.r = 5;
+        c2.print();
     }
 }

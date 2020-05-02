@@ -4,6 +4,10 @@ public class Account {
     private String name; // 帳戶名
     private int balance; // 帳戶餘額
     
+    boolean hasName() { // 有設定帳戶名嗎 ?
+        return name != null ? true : false;
+    }
+    
     void setName(String name) {
         if(name != null && name.length() <= 10) {
             this.name = name;

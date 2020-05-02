@@ -1,5 +1,7 @@
 package com.lab.ocp.day02;
 
+import java.util.Arrays;
+
 public class ArrayDemo3 {
     public static void main(String[] args) {
         int[] radius = {10, 20, 30}; // 半徑
@@ -14,5 +16,14 @@ public class ArrayDemo3 {
             double area = Math.pow(r, 2) * Math.PI;
             System.out.printf("%.2f ", area);
         }
+        System.out.println();
+        // Java 8 stream()
+        Arrays.stream(radius).forEach(r -> {
+            double area = Math.pow(r, 2) * Math.PI;
+            System.out.printf("%.2f ", area);
+        });
+        System.out.println();
+        // Java 8 stream()
+        Arrays.stream(radius).forEach(r -> System.out.printf("%.2f ", Math.pow(r, 2) * Math.PI));
     }
 }

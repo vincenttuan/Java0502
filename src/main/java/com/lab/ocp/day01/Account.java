@@ -6,7 +6,7 @@ public class Account {
     
     void deposit(int money) { // 存款
         if(money > 0) {
-            System.out.printf("存款金額: %d\n", money);
+            System.out.printf("存款金額: %,d\n", money);
             balance += money;
         } else {
             System.out.printf("存款金額錯誤: %d\n", money);
@@ -16,7 +16,7 @@ public class Account {
     
     void withdraw(int money) { // 提款
         if(money > 0) {
-            System.out.printf("提款金額: %d\n", money);
+            System.out.printf("提款金額: %,d\n", money);
             if(balance >= money) {
                 balance -= money;
             } else {

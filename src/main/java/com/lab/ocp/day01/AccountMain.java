@@ -6,6 +6,7 @@ public class AccountMain {
         Account acct = new Account();
         acct.name = "Vincent";
         acct.deposit(10_0000);
-        
+        acct.withdraw(6_0000);
+        acct.withdraw(6_0000);
     }
 }

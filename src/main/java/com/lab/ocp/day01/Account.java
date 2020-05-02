@@ -1,8 +1,16 @@
 package com.lab.ocp.day01;
 
 public class Account {
-    String name; // 帳戶名
+    private String name; // 帳戶名
     private int balance; // 帳戶餘額
+    
+    void setName(String name) {
+        if(name != null && name.length() <= 10) {
+            this.name = name;
+        } else {
+            System.out.printf("帳戶名稱輸入錯誤: %s\n", name);
+        }
+    }
     
     void deposit(int money) { // 存款
         if(money > 0) {

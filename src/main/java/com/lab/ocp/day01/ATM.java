@@ -1,5 +1,7 @@
 package com.lab.ocp.day01;
 
+import java.util.Scanner;
+
 public class ATM {
     public static void main(String[] args) {
         
@@ -14,6 +16,8 @@ public class ATM {
         System.out.println("5. 離開 Exit");
         System.out.println("--------------------");
         System.out.println("請選擇服務項目(1~5):");
+        Scanner sc = new Scanner(System.in);
+        int item = sc.nextInt(); // 取得使用者輸入的數值
         
     }
     

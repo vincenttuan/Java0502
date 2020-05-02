@@ -25,9 +25,15 @@ public class ATM {
                 String name = sc.next(); // 取得使用者輸入的帳戶名稱
                 acc.setName(name); // 設定使用者帳戶名稱
                 break;
-            case 2:
+            case 2: // 2. 帳戶存款
+                System.out.println("請輸入存款金額:");
+                int deposit_money = sc.nextInt(); // 取得使用者輸入的存款金額
+                acc.deposit(deposit_money);
                 break;
-            case 3:
+            case 3: // 3. 帳戶提款
+                System.out.println("請輸入提款金額:");
+                int withdraw_money = sc.nextInt(); // 取得使用者輸入的提款金額
+                acc.withdraw(withdraw_money);
                 break;
             case 4: // 4. 餘額查詢
                 acc.print(); // 印出帳戶資訊

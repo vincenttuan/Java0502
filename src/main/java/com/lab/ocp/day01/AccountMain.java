@@ -8,5 +8,6 @@ public class AccountMain {
         acct.deposit(10_0000);
         acct.withdraw(6_0000);
         acct.withdraw(6_0000);
+        acct.print();
     }
 }

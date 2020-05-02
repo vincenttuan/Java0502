@@ -49,6 +49,10 @@ public class Account {
     }
     
     void print() { // 列印帳戶資訊
+        if(!hasName()) {
+            System.out.println("帳戶名不存在無法列印帳戶資訊~");
+            return; // 離開此方法
+        }
         System.out.printf("%s 帳戶餘額: $%,d\n", name, balance);
     }
 }

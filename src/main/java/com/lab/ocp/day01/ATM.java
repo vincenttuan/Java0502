@@ -30,7 +30,7 @@ public class ATM {
             case 3:
                 break;
             case 4: // 4. 餘額查詢
-                
+                acc.print(); // 印出帳戶資訊
                 break;
             case 5:
                 return;

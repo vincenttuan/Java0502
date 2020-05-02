@@ -10,6 +10,7 @@ public class Account {
         } else {
             System.out.printf("存款金額錯誤: %d\n", money);
         }
+        print(); // 印出帳戶資料
     }
     
     void withdraw(int money) { // 提款
@@ -18,11 +19,11 @@ public class Account {
                 balance -= money;
             } else {
                 System.out.println("帳戶餘額不足");
-                print(); // 印出帳戶資料
             }
         } else {
             System.out.printf("提款金額錯誤: %d\n", money);
         }
+        print(); // 印出帳戶資料
     }
     
     void print() { // 列印帳戶資訊

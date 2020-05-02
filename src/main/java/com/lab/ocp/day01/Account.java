@@ -9,10 +9,15 @@ public class Account {
     }
     
     void setName(String name) {
-        if(name != null && name.length() <= 10) {
-            this.name = name;
-        } else {
+        if (name == null) {
             System.out.printf("帳戶名稱輸入錯誤: %s\n", name);
+        } else {
+            name = name.trim(); // 去除左右空白
+            if(name.length() >= 1 && name.length() <= 10) {
+                this.name = name;
+            } else {
+                System.out.printf("帳戶名稱輸入錯誤: %s\n", name);
+            }
         }
     }
     

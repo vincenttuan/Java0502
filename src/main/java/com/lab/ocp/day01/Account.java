@@ -9,8 +9,8 @@ public class Account {
     }
     
     void setName(String name) {
-        if (name == null) {
-            System.out.printf("帳戶名稱輸入錯誤: %s\n", name);
+        if (name == null) { // 判斷 name 是否是空值 ?
+            System.out.printf("帳戶名稱不可是空值: %s\n", name);
         } else {
             name = name.trim(); // 去除左右空白
             if(name.length() >= 1 && name.length() <= 10) {

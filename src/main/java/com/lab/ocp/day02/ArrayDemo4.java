@@ -19,7 +19,10 @@ public class ArrayDemo4 {
         System.out.printf("%.1f\n", (double)sum/count);
         
         // Java 8
-        double avg = Arrays.stream(scores).filter(s -> s >= 60).average().getAsDouble();
+        double avg = Arrays.stream(scores)
+                .filter(s -> s >= 60)
+                .average()
+                .getAsDouble();
         System.out.printf("%.1f\n", avg);
     }
 }

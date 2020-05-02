@@ -17,6 +17,10 @@ public class Account {
     }
     
     void deposit(int money) { // 存款
+        if(!hasName()) {
+            System.out.println("帳戶名不存在無法存款~");
+            return; // 離開此方法
+        }
         if(money > 0) {
             System.out.printf("存款金額: %,d\n", money);
             balance += money;
@@ -27,6 +31,10 @@ public class Account {
     }
     
     void withdraw(int money) { // 提款
+        if(!hasName()) {
+            System.out.println("帳戶名不存在無法提款~");
+            return; // 離開此方法
+        }
         if(money > 0) {
             System.out.printf("提款金額: %,d\n", money);
             if(balance >= money) {

@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class ATM {
     public static void main(String[] args) {
-        menu();
+        Account acc = new Account();
+        menu(acc);
     }
     
-    public static void menu() {
+    public static void menu(Account acc) {
         System.out.println("--------------------");
         System.out.println("1. 設定帳戶名稱");
         System.out.println("2. 帳戶存款");
@@ -19,18 +20,22 @@ public class ATM {
         Scanner sc = new Scanner(System.in);
         int item = sc.nextInt(); // 取得使用者輸入的數值
         switch(item) {
-            case 1:
+            case 1: // 1. 設定帳戶名稱
+                System.out.println("請輸入帳戶名稱:");
+                String name = sc.next(); // 取得使用者輸入的帳戶名稱
+                acc.setName(name); // 設定使用者帳戶名稱
                 break;
             case 2:
                 break;
             case 3:
                 break;
-            case 4:
+            case 4: // 4. 餘額查詢
+                
                 break;
             case 5:
                 return;
         }
-        menu();
+        menu(acc);
     }
     
 }

@@ -1,5 +1,7 @@
 package com.lab.ocp.day02;
 
+import java.util.Arrays;
+
 public class ArrayDemo4 {
     public static void main(String[] args) {
         int[] scores = {40, 70, 30, 90, 100};
@@ -14,7 +16,10 @@ public class ArrayDemo4 {
             }
         }
         System.out.printf("count= %d sum= %d\n", count, sum);
-        System.out.printf("%.1f", (double)sum/count);
-        //----------------------------------------------------
+        System.out.printf("%.1f\n", (double)sum/count);
+        
+        // Java 8
+        double avg = Arrays.stream(scores).filter(s -> s >= 60).average().getAsDouble();
+        System.out.printf("%.1f\n", avg);
     }
 }

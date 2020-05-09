@@ -16,7 +16,14 @@ public class StringDemo {
             }
         }
         System.out.println("有" + sum + "個 s");
-                
+        // 有幾個 sea
+        int sum2 = 0;
+        for(String w : wordArray) {
+            if(w.equals("sea")) {
+                sum2++;
+            }
+        }
+        System.out.println("有" + sum2 + "個 sea");
         
     }
 }

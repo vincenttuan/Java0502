@@ -2,6 +2,7 @@ package com.lab.ocp.day03;
 
 // 井字遊戲對戰
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicGame {
@@ -11,12 +12,28 @@ public class TicGame {
             Scanner sc = new Scanner(System.in);
             System.out.println("請選擇位置(0~8): ");
             int pos = sc.nextInt();
-            c[pos] = 'O';
-            print(c);
-            winner(c);
+            if(c[pos] == '\u0000') {
+                c[pos] = 'O';
+                pcRun(c); // 電腦執行
+                print(c);
+                winner(c);
+            } else {
+                System.out.println("此位置不可選擇");
+            }
+            
         } while (true);
         
         
+    }
+    
+    public static void pcRun(char [] c) {
+        while (true) {            
+            int pos = new Random().nextInt(c.length);
+            if(c[pos] == '\u0000') {
+                c[pos] = 'X';
+                break;
+            }
+        }
     }
     
     public static void print(char [] c) {

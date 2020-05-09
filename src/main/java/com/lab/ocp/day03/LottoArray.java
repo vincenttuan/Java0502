@@ -14,6 +14,8 @@ public class LottoArray {
         print(lottos);
         putData2(lottos);
         print(lottos);
+        sort(lottos);
+        print(lottos);
     }
     
     // 放資料
@@ -44,6 +46,19 @@ public class LottoArray {
             }
         }
         return exist;
+    }
+    
+    // 資料排序(小 -> 大)
+    public static void sort(int [] lottos) {
+        for (int i = 0; i < lottos.length; i++) {
+            for (int j = i+1; j < lottos.length; j++) {
+                if(lottos[i] > lottos[j]) {
+                    int n1 = lottos[i];
+                    lottos[i] = lottos[j];
+                    lottos[j] = n1;
+                }
+            }
+        }
     }
     
     // 清空資料

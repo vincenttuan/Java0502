@@ -7,5 +7,16 @@ public class StringDemo {
         String[] wordArray = word.split(" ");
         System.out.println(wordArray[0]);
         System.out.println("word: " + wordArray.length + "個字");
+        // 有幾個 s -> s 是一個 char
+        char[] chars = word.toCharArray();
+        int sum = 0;
+        for(int i=0;i<chars.length;i++) {
+            if(chars[i] == 's') {
+                sum++;
+            }
+        }
+        System.out.println("有" + sum + "個 s");
+                
+        
     }
 }

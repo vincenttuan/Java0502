@@ -16,7 +16,7 @@ public class EqualsDemo {
         System.out.println(s3.equals(s4)); // true
         char[] c = {'J', 'a', 'v', 'a'};
         String s5 = new String(c);
-        System.out.println(s5);
+        System.out.println(s5); // Java
         System.out.println(s1.equals(s5)); // true
         System.out.println(s3.equals(s5)); // true
         

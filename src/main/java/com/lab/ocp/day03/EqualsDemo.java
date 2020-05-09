@@ -10,6 +10,9 @@ public class EqualsDemo {
         System.out.println(s1 == s2);
         System.out.println(s1.equals(s2));
         System.out.println(s1.equalsIgnoreCase(s2)); // 不分大小寫的比較
-        
+        String s3 = "Java";
+        String s4 = "Java";
+        System.out.println(s3 == s4);
+        System.out.println(s3.equals(s4));
     }
 }

@@ -8,6 +8,8 @@ public class MultiArrayGame {
         g[2][2] = 'O';
         g[1][1] = 'X';
         print(g);
+        g[2][0] = 'O';
+        print(g);
     }
     public static void print(char[][] g) {
         for(int i=0;i<g.length;i++) {
@@ -16,5 +18,6 @@ public class MultiArrayGame {
             }
             System.out.println();
         }
+        System.out.println("--------------------");
     }
 }

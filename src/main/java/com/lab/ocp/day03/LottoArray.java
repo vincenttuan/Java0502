@@ -16,6 +16,7 @@ public class LottoArray {
         print(lottos);
         sort(lottos);
         print(lottos);
+        System.out.printf("max: %d\n", max(lottos));
     }
     
     // 放資料
@@ -59,6 +60,17 @@ public class LottoArray {
                 }
             }
         }
+    }
+    
+    // 取出最大值
+    public static int max(int [] lottos) {
+        int max = 0;
+        for(int i=0;i<lottos.length;i++) {
+            if(lottos[i] > max) {
+                max = lottos[i];
+            }
+        }
+        return max;
     }
     
     // 清空資料

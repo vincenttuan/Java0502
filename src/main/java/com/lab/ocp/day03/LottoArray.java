@@ -9,12 +9,21 @@ public class LottoArray {
         print(lottos);
         putData(lottos);
         print(lottos);
+        clearData(lottos);
+        print(lottos);
     }
     
     // 放資料
     public static void putData(int[] lottos) {
         for(int i=0;i<lottos.length;i++) {
             lottos[i] = new Random().nextInt(9) + 1; // 得到 1~9 的亂數
+        }
+    }
+    
+    // 清空資料
+    public static void clearData(int [] lottos) {
+        for(int i=0;i<lottos.length;i++) {
+            lottos[i] = 0;
         }
     }
     

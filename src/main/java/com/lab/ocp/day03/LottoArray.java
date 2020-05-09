@@ -20,6 +20,11 @@ public class LottoArray {
         }
     }
     
+    // 放資料(不可重複)
+    public static void putData2(int [] lottos) {
+        
+    }
+    
     // 清空資料
     public static void clearData(int [] lottos) {
         for(int i=0;i<lottos.length;i++) {

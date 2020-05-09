@@ -10,7 +10,7 @@ public class TicGame {
         char[] c = new char[9];
         do {            
             Scanner sc = new Scanner(System.in);
-            System.out.println("請選擇位置(0~8): ");
+            System.out.print("請選擇位置(0~8): ");
             int pos = sc.nextInt();
             if(c[pos] == '\u0000') {
                 c[pos] = 'O';

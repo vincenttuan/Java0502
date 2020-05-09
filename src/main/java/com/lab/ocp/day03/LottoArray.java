@@ -12,6 +12,8 @@ public class LottoArray {
         System.out.println(hasExist(7, lottos));
         clearData(lottos);
         print(lottos);
+        putData2(lottos);
+        print(lottos);
     }
     
     // 放資料
@@ -23,10 +25,16 @@ public class LottoArray {
     
     // 放資料(不可重複)
     public static void putData2(int [] lottos) {
-        
+        for(int i=0;i<lottos.length;) {
+            int n = new Random().nextInt(9) + 1;
+            if(!hasExist(n, lottos)) { // n 是否存在 lottos 中 ?
+                lottos[i] = n;
+                i++;
+            }
+        }
     }
     
-    // 資料是否存在在指定陣列中
+    // 資料n是否存在在指定陣列lottos中
     public static boolean hasExist(int n, int [] lottos) {
         boolean exist = false;
         for(int i=0;i<lottos.length;i++) {

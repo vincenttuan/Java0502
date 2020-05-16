@@ -24,5 +24,12 @@ public class ForLoopDemo5 {
                         .summaryStatistics();
         System.out.printf("班平均: %.1f\n", stat3.getAverage());
         
+        // 有幾個 100 分
+        long count = Arrays.stream(exams)
+                        .flatMapToInt(exam -> Arrays.stream(exam))
+                        .filter(score -> score == 100)
+                        .count();
+        System.out.printf("有 %d 個 100 分\n", count);
+                
     }
 }

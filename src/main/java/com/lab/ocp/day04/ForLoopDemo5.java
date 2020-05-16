@@ -1,7 +1,9 @@
 package com.lab.ocp.day04;
 
 import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
 import java.util.IntSummaryStatistics;
+import java.util.stream.IntStream;
 
 public class ForLoopDemo5 {
     public static void main(String[] args) {
@@ -11,5 +13,16 @@ public class ForLoopDemo5 {
                         .mapToInt(exam -> exam[0])
                         .summaryStatistics();
         System.out.printf("國文平均: %.1f\n", stat.getAverage());
+        // 班平均
+        IntSummaryStatistics stat2 = Arrays.stream(exams)
+                        .mapToInt(exam -> (exam[0]+exam[1])/2)
+                        .summaryStatistics();
+        System.out.printf("班平均: %.1f\n", stat2.getAverage());
+        
+        DoubleSummaryStatistics stat3 = Arrays.stream(exams)
+                        .mapToDouble(exam -> Arrays.stream(exam).average().getAsDouble())
+                        .summaryStatistics();
+        System.out.printf("班平均: %.1f\n", stat3.getAverage());
+        
     }
 }

@@ -36,6 +36,19 @@ public class Classroom3 {
                 .mapToInt(s -> s.getExam().getScore())
                 .summaryStatistics();
         System.out.println(stat);
-        
+        // 9. 最高分?是誰?
+        for(Student student : students) {
+            if(student.getExam().getScore() == stat.getMax()) {
+                System.out.printf("%d %s\n", stat.getMax(), student.getName());
+                break;
+            }
+        }
+        // 10. 最低分?是誰?
+        for(Student student : students) {
+            if(student.getExam().getScore() == stat.getMin()) {
+                System.out.printf("%d %s\n", stat.getMin(), student.getName());
+                break;
+            }
+        }
     }
 }

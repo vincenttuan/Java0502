@@ -13,6 +13,7 @@ public class Classroom3 {
         //System.out.println(data);
         // 切割資料 I (每一筆)
         String[] rows = data.split("\r\n");
+        // 建立 Student[] 陣列, 資料筆數 = rows.length
         Student[] students = new Student[rows.length];
         for (int i=0;i<rows.length;i++) {
             String[] row = rows[i].split(",");
@@ -25,6 +26,7 @@ public class Classroom3 {
             student.setName(row[0]);
             student.setExam(exam);
             //System.out.println(student);
+            // 將 student 物件加入到 students[] 陣列中
             students[i] = student;
         }
     }

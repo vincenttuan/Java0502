@@ -1,5 +1,8 @@
 package com.lab.ocp.day05;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
 public class Store3 {
     public static void main(String[] args) {
         Hamburger[] hamburgers = {
@@ -26,5 +29,16 @@ public class Store3 {
             sum2 += h.getPrice();
         }
         System.out.printf("總價: %d\n", sum2);
+        // 總共的價錢是 ? 寫法三 Java 8
+        int sum3 = Arrays.stream(hamburgers)
+                .mapToInt(h -> h.getPrice())
+                .sum();
+        System.out.printf("總價: %d\n", sum3);
+        // 統計數據 
+        IntSummaryStatistics stat = Arrays.stream(hamburgers)
+                .mapToInt(h -> h.getPrice())
+                .summaryStatistics();
+        System.out.printf("總價: %d\n", stat.getSum());
+        System.out.printf("平均: %.1f\n", stat.getAverage());
     }
 }

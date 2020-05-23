@@ -40,5 +40,9 @@ public class Store3 {
                 .summaryStatistics();
         System.out.printf("總價: %d\n", stat.getSum());
         System.out.printf("平均: %.1f\n", stat.getAverage());
+        System.out.printf("最貴: %df\n", stat.getMax());
+        System.out.printf("最便宜: %d\n", stat.getMin());
+        System.out.printf("總個數: %d\n", stat.getCount());
+        System.out.println(stat);
     }
 }

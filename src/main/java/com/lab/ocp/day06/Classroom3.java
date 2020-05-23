@@ -58,5 +58,12 @@ public class Classroom3 {
                 break;
             }
         }
+        // 10. 最低分?是誰? (Java 8)
+        String name2 = Arrays.stream(students)
+                .filter(s -> s.getExam().getScore() == stat.getMin())
+                .findFirst()
+                .get()
+                .getName();
+        System.out.printf("%d %s\n", stat.getMin(), name2);
     }
 }

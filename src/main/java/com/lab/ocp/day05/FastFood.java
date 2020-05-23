@@ -9,6 +9,13 @@ public class FastFood {
     public FastFood(String name) {
         this.name = name;
     }
+
+    public FastFood(String name, Hamburger hamburger, SideDish sideDish, Drink drink) {
+        this.name = name;
+        this.hamburger = hamburger;
+        this.sideDish = sideDish;
+        this.drink = drink;
+    }
     
     // 業務方法
     public int getPrice() {

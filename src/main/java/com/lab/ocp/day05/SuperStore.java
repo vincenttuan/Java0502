@@ -15,8 +15,11 @@ public class SuperStore {
         f.setHamburger(h2);
         f.setSideDish(s2);
         f.setDrink(d3);
+        FastFood f2 = new FastFood("二號餐", h1, s1, d1);
         
         System.out.println(f);
         System.out.println("$" + f.getPrice());
+        System.out.println(f2);
+        System.out.println("$" + f2.getPrice());
     }
 }

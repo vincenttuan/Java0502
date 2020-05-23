@@ -10,5 +10,11 @@ public class Store {
         System.out.println(foods[0]);
         System.out.println(foods[1]);
         System.out.println(foods[2]);
+        Food food = new Hamburger("麥香魚", 60);
+        Food food2 = new Drink("咖啡", 55);
+        Food food3 = new SideDish("蘋果派", 50);
+        System.out.println(food);
+        System.out.println(food2);
+        System.out.println(food3);
     }
 }

@@ -21,5 +21,8 @@ public class SuperStore {
         System.out.println("$" + f.getPrice());
         System.out.println(f2);
         System.out.println("$" + f2.getPrice());
+        
+        // 組合套餐
+        
     }
 }

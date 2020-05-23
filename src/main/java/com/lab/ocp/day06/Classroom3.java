@@ -65,5 +65,16 @@ public class Classroom3 {
                 .get()
                 .getName();
         System.out.printf("%d %s\n", stat.getMin(), name2);
+        System.out.println("----------------------------------------------");
+        // 11. 通過此次考試的人名有 (>=65分)
+        for(Student student : students) {
+            if(student.getExam().getScore() >= 65) {
+                System.out.printf("%d %s\n", student.getExam().getScore(), student.getName());
+            }
+        }
+        Arrays.stream(students)
+                .filter(s -> s.getExam().getScore() >= 65)
+                .forEach(s -> System.out.printf("%d %s\n", s.getExam().getScore(), s.getName()));
+        
     }
 }

@@ -13,6 +13,18 @@ public class Store3 {
             new Hamburger("小漢堡", 30),
             new Hamburger("吉士漢堡", 40),
         };
-        // 總共的價錢是 ?
+        // 總共的價錢是 ? 寫法一
+        int sum = 0;
+        for(int i=0;i<hamburgers.length;i++) {
+            Hamburger h = hamburgers[i];
+            sum += h.getPrice();
+        }
+        System.out.printf("總價: %d\n", sum);
+        // 總共的價錢是 ? 寫法二
+        int sum2 = 0;
+        for(Hamburger h : hamburgers) {
+            sum2 += h.getPrice();
+        }
+        System.out.printf("總價: %d\n", sum2);
     }
 }

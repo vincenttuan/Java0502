@@ -75,6 +75,12 @@ public class Classroom3 {
         Arrays.stream(students)
                 .filter(s -> s.getExam().getScore() >= 65)
                 .forEach(s -> System.out.printf("%d %s\n", s.getExam().getScore(), s.getName()));
-        
+        // 12. 通過此次考試的人之平均分數是多少 ?
+        double avg = Arrays.stream(students)
+                .filter(s -> s.getExam().getScore() >= 65)
+                .mapToInt(s -> s.getExam().getScore())
+                .average()
+                .getAsDouble();
+        System.out.printf("通過者的平均成績: %.1f\n", avg);
     }
 }

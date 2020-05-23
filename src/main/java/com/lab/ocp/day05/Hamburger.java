@@ -50,4 +50,10 @@ public class Hamburger {
         System.out.println("4.包裝");
         System.out.println("----------------------");
     }
+    
+    @Override // 覆寫方法
+    public String toString() {
+        String data = String.format("name: %s price: %d", name, price);
+        return data;
+    }
 }

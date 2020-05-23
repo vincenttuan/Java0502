@@ -9,6 +9,12 @@ public class Hamburger {
     
     }
     
+    public Hamburger(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+    
+    
     // 封裝屬性
     public String getName() {
         return name;

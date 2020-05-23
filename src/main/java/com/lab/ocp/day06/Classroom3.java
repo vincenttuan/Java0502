@@ -1,6 +1,8 @@
 package com.lab.ocp.day06;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 
 public class Classroom3 {
@@ -29,5 +31,11 @@ public class Classroom3 {
             // 7. 將 student 物件加入到 students[] 陣列中
             students[i] = student;
         }
+        // 8. 請顯示出 students 的分析統計資料
+        IntSummaryStatistics stat = Arrays.stream(students)
+                .mapToInt(s -> s.getExam().getScore())
+                .summaryStatistics();
+        System.out.println(stat);
+        
     }
 }

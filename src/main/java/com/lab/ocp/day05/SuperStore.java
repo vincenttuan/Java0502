@@ -1,5 +1,7 @@
 package com.lab.ocp.day05;
 
+import java.util.Arrays;
+
 public class SuperStore {
     public static void main(String[] args) {
         // 單品
@@ -23,6 +25,17 @@ public class SuperStore {
         System.out.println("$" + f2.getPrice());
         
         // 組合套餐
-        
+        FastFood[] ffs = {f, f2, f, f, f2};
+        // 請問總價 = ?
+        int sum = Arrays.stream(ffs)
+                .mapToInt(fs -> fs.getPrice())
+                .sum();
+        System.out.println("sum: " + sum);
+        // 請問飲料(Drink)的價格佔總價的幾趴(%)
+        int sum_drink = Arrays.stream(ffs)
+                .mapToInt(fs -> fs.getDrink().getPrice())
+                .sum();
+        System.out.println("sum_drink: " + sum_drink);
+        System.out.printf("sum_drink/sum: %.2f %%\n", (double)sum_drink/sum * 100);
     }
 }

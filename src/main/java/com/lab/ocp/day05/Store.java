@@ -10,5 +10,7 @@ public class Store {
         h2.setPrice(50);
         System.out.printf("name: %s price: %d\n", h.getName(), h.getPrice());
         System.out.printf("name: %s price: %d\n", h2.getName(), h2.getPrice());
+        h.cook();
+        h2.cook();
     }
 }

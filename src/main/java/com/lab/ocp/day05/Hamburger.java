@@ -25,4 +25,12 @@ public class Hamburger {
     public void setPrice(int price) {
         this.price = price;
     }
+    
+    // 業務方法
+    public void cook() {
+        System.out.println("1.放麵包");
+        System.out.println("2.放食材");
+        System.out.println("3.放醬料");
+        System.out.println("4.包裝");
+    }
 }

@@ -1,42 +1,19 @@
 package com.lab.ocp.day06;
 
-public class Hamburger {
-    private String name; // 物件屬性
-    private int price; // 物件屬性
-    
-    // 建構子
+public class Hamburger extends Food {
+
     public Hamburger() {
-    
     }
-    
+
     public Hamburger(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
-    
-    
-    // 封裝屬性
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public int getPrice() {
-        return price;
-    }
-    
-    public void setPrice(int price) {
-        this.price = price;
+        super(name, price);
     }
     
     // 業務方法
     public void cook() {
-        System.out.println(name + " 的做法");
+        System.out.println(getName() + " 的做法");
         String food = "";
-        switch(name) {
+        switch(getName()) {
             case "大麥克":
                 food = "牛肉";
                 break;
@@ -51,9 +28,4 @@ public class Hamburger {
         System.out.println("----------------------");
     }
     
-    @Override // 覆寫方法
-    public String toString() {
-        String data = String.format("name: %s price: %d", name, price);
-        return data;
-    }
 }

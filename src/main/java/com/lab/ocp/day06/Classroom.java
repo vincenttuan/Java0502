@@ -16,6 +16,11 @@ public class Classroom {
         Exam exam3 = new Exam("1z0-808", 72);
         s3.setExam(exam3);
         
+        System.out.println(t);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        
         
     }
 }

@@ -29,7 +29,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{name" + getName() + ", exam=" + exam + '}';
+        return "Student{name=" + getName() + ", exam=" + exam + '}';
     }
     
     

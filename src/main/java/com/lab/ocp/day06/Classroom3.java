@@ -43,6 +43,14 @@ public class Classroom3 {
                 break;
             }
         }
+        // 9. 最高分?是誰? (Java 8)
+        String name = Arrays.stream(students)
+                        .filter(s -> s.getExam().getScore() == stat.getMax()) // 過濾資料
+                        .findFirst() // 找到第一筆符合的
+                        .get() // Student 物件
+                        .getName(); // 取得人名
+        System.out.printf("%d %s\n", stat.getMax(), name);
+        
         // 10. 最低分?是誰?
         for(Student student : students) {
             if(student.getExam().getScore() == stat.getMin()) {

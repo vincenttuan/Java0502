@@ -10,8 +10,10 @@ public class Classroom2 {
         Scanner sc = new Scanner(file);
         String data = sc.useDelimiter("\\A").next();
         //System.out.println(data);
+        // 切割資料 I (每一筆)
         String[] rows = data.split("\r\n");
         System.out.println(rows[0]);
+        // 切割資料 II (每一欄)
         String[] row = rows[0].split(",");
         System.out.println(row[0]); // 學生姓名
         System.out.println(row[1]); // 考試代號/名稱

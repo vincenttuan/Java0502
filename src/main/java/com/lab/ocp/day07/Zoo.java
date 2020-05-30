@@ -8,7 +8,7 @@ public class Zoo {
         System.out.println(animal.getClass());
         Tiger tiger = new Tiger();
         Ostrich ostrich = new Ostrich();
-        move(ostrich);
+        move(tiger);
         //-----------------------------
         Animal o1 = new Ostrich();
         Ostrich o2 = new Ostrich();
@@ -17,6 +17,11 @@ public class Zoo {
     }
     public static void move(Animal animal) {
         animal.move();
+        if(animal instanceof Ostrich) {
+            ((Ostrich)animal).motto();
+        } else {
+            System.out.println("不可轉 Ostrich");
+        }
     }
     public static Animal getAnimal() {
         int n = new Random().nextInt(5);

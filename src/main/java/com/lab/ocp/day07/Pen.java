@@ -14,8 +14,6 @@ public class Pen {
         return 7 * 19 * color.hashCode() * price;
     }
     
-    
-    
     @Override
     public boolean equals(Object obj) {
         if(this == obj) {

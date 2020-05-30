@@ -10,7 +10,7 @@ public class EqualsDemo {
         System.out.printf("a == b %b\n", a == b);
         System.out.printf("a.equals(b) %b\n", a.equals(b));
         Pen p1 = new Pen("Red", 10);
-        Pen p2 = p1;
+        Pen p2 = new Pen("Red", 10);
         System.out.println(p1);
         System.out.println(p2);
         System.out.printf("p1 == p2 %b\n", p1 == p2);

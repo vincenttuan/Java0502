@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Zoo {
     public static void main(String[] args) {
-        Animal animal = new Animal();
+        Animal animal = getAnimal();
+        System.out.println(animal.getClass());
         Tiger tiger = new Tiger();
         Ostrich ostrich = new Ostrich();
         move(ostrich);

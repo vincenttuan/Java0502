@@ -7,7 +7,7 @@ public class Ostrich extends Bird {
         System.out.println("走");
     }
     
-    public void motto() { // 座右銘
+    void motto() { // 座右銘
         System.out.println("鴕鳥精神");
     }
     

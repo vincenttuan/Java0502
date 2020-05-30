@@ -22,6 +22,7 @@ public class StockService {
                 .filter(s -> !(s.get股價淨值比().equals("-")))
                 .filter(s -> Double.parseDouble(s.get本益比()) <= pe)
                 .filter(s -> Double.parseDouble(s.get殖利率()) >= yield)
+                .filter(s -> Double.parseDouble(s.get股價淨值比()) < 1)
                 .forEach(s -> System.out.println(s));
     }
 }

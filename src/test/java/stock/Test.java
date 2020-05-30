@@ -17,5 +17,6 @@ public class Test {
     public void test_StockService() {
         StockService service = new StockService();
         service.find本益比(10);
+        service.findBestBuy(7, 10);
     }
 }

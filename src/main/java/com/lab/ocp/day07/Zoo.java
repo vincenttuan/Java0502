@@ -9,6 +9,11 @@ public class Zoo {
         Tiger tiger = new Tiger();
         Ostrich ostrich = new Ostrich();
         move(ostrich);
+        //-----------------------------
+        Animal o1 = new Ostrich();
+        Ostrich o2 = new Ostrich();
+        ((Ostrich)o1).motto();
+        o2.motto();
     }
     public static void move(Animal animal) {
         animal.move();

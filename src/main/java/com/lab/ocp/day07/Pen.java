@@ -9,6 +9,13 @@ public class Pen {
         this.price = price;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return true;
+    }
+    
+    
+    
     public String getColor() {
         return color;
     }

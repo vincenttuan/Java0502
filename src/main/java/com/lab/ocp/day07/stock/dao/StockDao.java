@@ -11,7 +11,7 @@ public class StockDao {
         try {
             File file = new File("src\\main\\java\\com\\lab\\ocp\\day07\\stock\\db\\BWIBBU_d.txt");
             String data = new Scanner(file, "UTF-8").useDelimiter("\\A").next();
-            String[] rows = data.split("\n");
+            String[] rows = data.split("\r\n");
             stocks = new Stock[rows.length];
             for(int i=0;i<rows.length;i++) {
                 String[] row = rows[i].split(",");

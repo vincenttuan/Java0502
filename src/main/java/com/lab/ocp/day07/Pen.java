@@ -11,8 +11,14 @@ public class Pen {
 
     @Override
     public boolean equals(Object obj) {
-        return true;
+        Pen pen = (Pen)obj;
+        if(pen.color.equals(color))
+            return true;
+        else
+            return false;
     }
+
+    
     
     
     

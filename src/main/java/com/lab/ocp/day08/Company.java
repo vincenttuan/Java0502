@@ -2,6 +2,18 @@ package com.lab.ocp.day08;
 
 public class Company {
     private String name = "ABC"; // 公司名稱
+    
+    public void printGoal() { // 公司願景
+        int year = 2020;
+        class Goal {
+            void printYear() {
+                System.out.printf("%d 願景...\n", year);
+            }
+        }
+        Goal goal = new Goal();
+        goal.printYear();
+    }
+    
     // 建立員工類別
     public class Employee {
         private String name = "John"; // 員工名字

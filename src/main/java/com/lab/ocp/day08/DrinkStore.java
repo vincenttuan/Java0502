@@ -1,5 +1,8 @@
 package com.lab.ocp.day08;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
 public class DrinkStore {
     public static void main(String[] args) {
         Drink c1 = new Coffee("拿鐵", 50);
@@ -26,8 +29,11 @@ public class DrinkStore {
                 System.out.printf("品名: %s 價格: $%d\n", drink.getName(), drink.getPrice());
             }
         }
-        // 平均價格 ?
-        
-        
+        // 總共有多少飲品 ? 價格總和 ? 平均價格 ? 最貴 ?, 最便直 ?
+        IntSummaryStatistics stat = Arrays.stream(drinks)
+                .mapToInt(d -> d.getPrice())
+                .summaryStatistics();
+        System.out.printf("總共有多少飲品 %d 價格總和 %d 平均價格 %.1f 最貴 %d, 最便直 %d\n",
+                stat.getCount(), stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
     }
 }

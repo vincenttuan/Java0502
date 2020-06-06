@@ -1,4 +1,4 @@
-kind, size, price, amount
+kind,size,price,amount
 T-Shirt,S,100,10
 T-Shirt,M,150,30
 T-Shirt,L,200,20

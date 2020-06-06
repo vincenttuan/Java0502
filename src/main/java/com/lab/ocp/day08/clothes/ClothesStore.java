@@ -20,24 +20,33 @@ public class ClothesStore {
                 case "T-Shirt":
                     switch(size) {
                         case "S":
+                            clotheses[i-1] = new SmallTShirt(price, amount);
                             break;
                         case "M":
+                            clotheses[i-1] = new MedTShirt(price, amount);
                             break;
                         case "L":
+                            clotheses[i-1] = new LargePants(price, amount);
                             break;
                     }
                     break;
                 case "Pants":
                     switch(size) {
                         case "S":
+                            clotheses[i-1] = new SmallPants(price, amount);
                             break;
                         case "M":
+                            clotheses[i-1] = new MedPants(price, amount);
                             break;
                         case "L":
+                            clotheses[i-1] = new LargePants(price, amount);
                             break;
                     }
                     break;
             }
+        }
+        for(Clothes clothes : clotheses) {
+            System.out.println(clothes);
         }
     }
 }

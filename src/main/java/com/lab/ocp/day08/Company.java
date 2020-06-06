@@ -3,11 +3,12 @@ package com.lab.ocp.day08;
 public class Company {
     private String name = "ABC"; // 公司名稱
     
-    public void printGoal() { // 公司願景
+    public void printGoal(int yyyy) { // 公司願景
         int year = 2020;
         class Goal {
             void printYear() {
                 System.out.printf("%d 願景...\n", year);
+                System.out.printf("%d 願景...\n", yyyy);
             }
         }
         Goal goal = new Goal();

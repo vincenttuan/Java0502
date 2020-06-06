@@ -6,6 +6,6 @@ public class CompanyDemo {
         Company.Employee e1 = c1.new Employee();
         e1.job();
         System.out.println(e1.getSalary());
-        c1.printGoal();
+        c1.printGoal(2021);
     }
 }

@@ -3,6 +3,14 @@ package com.lab.ocp.day08;
 public class Juice implements Drink {
     private String name;
     private Integer price;
+
+    public Juice(String name, Integer price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Juice() {
+    }
     
     @Override
     public String getName() {

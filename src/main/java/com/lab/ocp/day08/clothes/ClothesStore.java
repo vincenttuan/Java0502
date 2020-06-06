@@ -57,6 +57,7 @@ public class ClothesStore {
                 .mapToInt(amountMultiPrice)
                 .sum();
         System.out.printf("Total price: %,d\n", total);
+        // 2.各別庫存成本
         int total_tshirt = Arrays.stream(clotheses)
                 .filter(c -> c instanceof TShirt)
                 .mapToInt(amountMultiPrice)
@@ -67,5 +68,20 @@ public class ClothesStore {
                 .sum();
         System.out.printf("Total T-Shirt price: %,d\n", total_tshirt);
         System.out.printf("Total Pants price: %,d\n", total_pants);
+        // 3. T-shirt M 3 件, Pants S 2 件
+        int sum = Arrays.stream(clotheses)
+                    .filter(c -> c instanceof TShirt)
+                    .filter(c -> c.getSize().equals("M"))
+                    .findFirst()
+                    .get()
+                    .getPrice() * 3 
+                  + 
+                  Arrays.stream(clotheses)
+                    .filter(c -> c instanceof Pants)
+                    .filter(c -> c.getSize().equals("S"))
+                    .findFirst()
+                    .get()
+                    .getPrice() * 2;
+        System.out.println(sum);
     }
 }

@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.ToIntFunction;
-import java.util.stream.IntStream;
 
 public class ClothesStore {
-    public static void main(String[] args) throws Exception {
+    // 資料匯入
+    public static Clothes[] getClothes() throws Exception {
         File file = new File("src\\main\\java\\com\\lab\\ocp\\day08\\clothes\\clothes.txt");
         String data = new Scanner(file).useDelimiter("\\A").next();
         String[] rows = data.split("\n");
@@ -48,9 +48,12 @@ public class ClothesStore {
                     break;
             }
         }
-        for(Clothes clothes : clotheses) {
-            System.out.println(clothes);
-        }
+        return clotheses;
+    }
+    
+    // 主程式
+    public static void main(String[] args) throws Exception {
+        Clothes[] clotheses = getClothes();
         // 1.總庫存成本
         ToIntFunction<Clothes> amountMultiPrice = c -> c.getAmount() * c.getPrice();
         int total = Arrays.stream(clotheses)

@@ -4,6 +4,16 @@ public class Mac implements FastFood {
     private String name;
     private Integer price;
     private Integer count;
+
+    public Mac() {
+    }
+
+    public Mac(String name, Integer price, Integer count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+    }
+    
     @Override
     public Integer getCount() {
         return count;

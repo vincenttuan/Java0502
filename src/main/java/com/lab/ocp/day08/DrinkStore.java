@@ -17,5 +17,8 @@ public class DrinkStore {
         
         Drink[] drinks = {c1, c2, c3, t1, t2, m1, m2, j1, j2};
         
+        for(Drink drink : drinks) {
+            System.out.printf("品名: %s 價格: $%d\n", drink.getName(), drink.getPrice());
+        }
     }
 }

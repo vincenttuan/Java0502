@@ -1,6 +1,7 @@
 package com.lab.ocp.day08.clothes;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ClothesStore {
@@ -48,5 +49,20 @@ public class ClothesStore {
         for(Clothes clothes : clotheses) {
             System.out.println(clothes);
         }
+        // 1.總庫存成本
+        int total = Arrays.stream(clotheses)
+                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .sum();
+        System.out.printf("Total price: %,d\n", total);
+        int total_tshirt = Arrays.stream(clotheses)
+                .filter(c -> c instanceof TShirt)
+                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .sum();
+        int total_pants = Arrays.stream(clotheses)
+                .filter(c -> c instanceof Pants)
+                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .sum();
+        System.out.printf("Total T-Shirt price: %,d\n", total_tshirt);
+        System.out.printf("Total Pants price: %,d\n", total_pants);
     }
 }

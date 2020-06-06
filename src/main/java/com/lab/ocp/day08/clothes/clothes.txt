@@ -1,0 +1,7 @@
+kind, size, price, amount
+T-Shirt,S,100,10
+T-Shirt,M,150,30
+T-Shirt,L,200,20
+Pants,S,120,15
+Pants,M,130,25
+Pants,L,140,35

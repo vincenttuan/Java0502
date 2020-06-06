@@ -1,4 +1,4 @@
-package com.lab.ocp.day08;
+package com.lab.ocp.day08.drink;
 
 public class Tea implements Drink {
     private String name;

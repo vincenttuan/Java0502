@@ -1,15 +1,15 @@
-package com.lab.ocp.day08;
+package com.lab.ocp.day08.drink;
 
-public class Juice implements Drink {
+public class Coffee implements Drink {
     private String name;
     private Integer price;
 
-    public Juice(String name, Integer price) {
+    public Coffee(String name, Integer price) {
         this.name = name;
         this.price = price;
     }
 
-    public Juice() {
+    public Coffee() {
     }
     
     @Override

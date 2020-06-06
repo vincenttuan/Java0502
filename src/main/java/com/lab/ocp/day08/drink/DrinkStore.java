@@ -1,4 +1,4 @@
-package com.lab.ocp.day08;
+package com.lab.ocp.day08.drink;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;

@@ -1,4 +1,4 @@
-package com.lab.ocp.day08;
+package com.lab.ocp.day08.drink;
 
 // 飲料規格
 public interface Drink {

@@ -3,6 +3,8 @@ package com.lab.ocp.day08.clothes;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.function.ToIntFunction;
+import java.util.stream.IntStream;
 
 public class ClothesStore {
     public static void main(String[] args) throws Exception {
@@ -50,17 +52,18 @@ public class ClothesStore {
             System.out.println(clothes);
         }
         // 1.總庫存成本
+        ToIntFunction<Clothes> amountMultiPrice = c -> c.getAmount() * c.getPrice();
         int total = Arrays.stream(clotheses)
-                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .mapToInt(amountMultiPrice)
                 .sum();
         System.out.printf("Total price: %,d\n", total);
         int total_tshirt = Arrays.stream(clotheses)
                 .filter(c -> c instanceof TShirt)
-                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .mapToInt(amountMultiPrice)
                 .sum();
         int total_pants = Arrays.stream(clotheses)
                 .filter(c -> c instanceof Pants)
-                .mapToInt(c -> c.getAmount() * c.getPrice())
+                .mapToInt(amountMultiPrice)
                 .sum();
         System.out.printf("Total T-Shirt price: %,d\n", total_tshirt);
         System.out.printf("Total Pants price: %,d\n", total_pants);

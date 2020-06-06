@@ -26,6 +26,8 @@ public class DrinkStore {
                 System.out.printf("品名: %s 價格: $%d\n", drink.getName(), drink.getPrice());
             }
         }
+        // 平均價格 ?
+        
         
     }
 }

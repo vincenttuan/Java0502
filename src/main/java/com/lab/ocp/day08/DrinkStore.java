@@ -35,5 +35,18 @@ public class DrinkStore {
                 .summaryStatistics();
         System.out.printf("總共有多少飲品 %d 價格總和 %d 平均價格 %.1f 最貴 %d, 最便直 %d\n",
                 stat.getCount(), stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
+        // 過濾
+        Arrays.stream(drinks)
+                .filter(p -> p.getPrice() == stat.getMax())
+                .forEach(p -> System.out.printf("最貴品名: %s 價格: %d\n", p.getName(), p.getPrice()));
+        
+        Arrays.stream(drinks)
+                .filter(p -> p.getPrice() == stat.getMin())
+                .forEach(p -> System.out.printf("最便宜品名: %s 價格: %d\n", p.getName(), p.getPrice()));
+        
+        Arrays.stream(drinks)
+                .filter(p -> p.getPrice() == stat.getAverage())
+                .forEach(p -> System.out.printf("最適價品名: %s 價格: %d\n", p.getName(), p.getPrice()));
+        
     }
 }

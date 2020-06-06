@@ -17,6 +17,7 @@ public class FoodStore {
         最後的結帳費用是 ?
         */
         int sum = Arrays.stream(foods)
+                .filter(f -> f instanceof FastFood)
                 .map(f -> (FastFood)f)
                 .mapToInt(ff -> ff.getCount() * ff.getPrice())
                 .sum();

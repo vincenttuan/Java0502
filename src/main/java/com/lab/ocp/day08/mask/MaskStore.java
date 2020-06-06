@@ -20,7 +20,7 @@ public class MaskStore {
                 .mapToInt(m -> m.getPrice())
                 .sum();
         System.out.println(total);
-        
+        // 我要買 Audlt 3 個 與 Child 2 個要花多少錢 ?
         
     }
 }

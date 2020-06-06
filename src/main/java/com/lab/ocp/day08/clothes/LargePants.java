@@ -11,7 +11,7 @@ public class LargePants extends Pants {
     
     @Override
     public String getSize() {
-        return "S";
+        return "L";
     }
 
     @Override

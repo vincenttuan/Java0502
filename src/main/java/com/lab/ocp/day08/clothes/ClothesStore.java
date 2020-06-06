@@ -29,7 +29,7 @@ public class ClothesStore {
                             clotheses[i-1] = new MedTShirt(price, amount);
                             break;
                         case "L":
-                            clotheses[i-1] = new LargePants(price, amount);
+                            clotheses[i-1] = new LargeTShirt(price, amount);
                             break;
                     }
                     break;

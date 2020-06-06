@@ -16,9 +16,16 @@ public class DrinkStore {
         Drink j2 = new Juice("柳橙汁", 35);
         
         Drink[] drinks = {c1, c2, c3, t1, t2, m1, m2, j1, j2};
-        
+        // 所有的 Drink
         for(Drink drink : drinks) {
             System.out.printf("品名: %s 價格: $%d\n", drink.getName(), drink.getPrice());
         }
+        // 只印出 Coffee
+        for(Drink drink : drinks) {
+            if(drink instanceof Coffee) {
+                System.out.printf("品名: %s 價格: $%d\n", drink.getName(), drink.getPrice());
+            }
+        }
+        
     }
 }

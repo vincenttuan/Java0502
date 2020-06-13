@@ -2,7 +2,7 @@ package com.lab.ocp.day09;
 
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product>{
     private String name;
     private Integer amount;
     private Double price;
@@ -76,6 +76,11 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" + "name=" + name + ", amount=" + amount + ", price=" + price + '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return (int)(price - o.price);
     }
     
 }

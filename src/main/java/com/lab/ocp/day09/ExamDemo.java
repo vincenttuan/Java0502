@@ -2,6 +2,7 @@ package com.lab.ocp.day09;
 
 import java.util.HashSet;
 import java.util.IntSummaryStatistics;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import static java.util.stream.Collectors.partitioningBy;
@@ -23,5 +24,9 @@ public class ExamDemo {
         System.out.println(
             exams.stream().collect(partitioningBy(e -> e.getScore() >= 60))
         );
+        
+        Map<Boolean, List<Exam>> map = exams.stream().collect(partitioningBy(e -> e.getScore() >= 60));
+        System.out.println(map);
+        
     }
 }

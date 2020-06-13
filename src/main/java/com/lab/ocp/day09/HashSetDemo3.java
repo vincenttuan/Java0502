@@ -26,5 +26,6 @@ public class HashSetDemo3 {
                 .mapToInt(obj -> Integer.parseInt(obj.toString()))
                 .sum();
         System.out.printf("sum: %d\n", sum);
+        System.out.println(hs);
     }
 }

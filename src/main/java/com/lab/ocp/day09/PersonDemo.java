@@ -13,8 +13,8 @@ public class PersonDemo {
         File file = new File("src\\main\\java\\com\\lab\\ocp\\day09\\exams.json");
         String json = new Scanner(file).useDelimiter("\\A").next();
 
-        Type type = new TypeToken<Set<Person>>() {
-        }.getType();
+        Type type = new TypeToken<Set<Person>>() {}.getType();
+        
         Set<Person> persons = new Gson().fromJson(json, type);
         persons.stream().forEach(p -> {
             int sum = p.getExams().stream().mapToInt(e -> e.getScore()).sum();

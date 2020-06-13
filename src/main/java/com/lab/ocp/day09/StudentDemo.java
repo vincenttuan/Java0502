@@ -12,5 +12,11 @@ public class StudentDemo {
         Gson gson = new Gson();
         Set<Student> students = gson.fromJson(json, Set.class);
         System.out.println(students);
+        
+        // 請求出每人的總分各是多少 ?
+        
+        // 請求出總分最高的人名 ?
+        
+        
     }
 }

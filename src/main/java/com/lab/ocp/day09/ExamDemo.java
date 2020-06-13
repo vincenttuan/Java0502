@@ -2,7 +2,9 @@ package com.lab.ocp.day09;
 
 import java.util.HashSet;
 import java.util.IntSummaryStatistics;
+import java.util.Map;
 import java.util.Set;
+import static java.util.stream.Collectors.partitioningBy;
 
 public class ExamDemo {
     public static void main(String[] args) {
@@ -18,5 +20,8 @@ public class ExamDemo {
         IntSummaryStatistics stat = exams.stream().mapToInt(e -> e.getScore()).summaryStatistics();
         System.out.println(stat);
         
+        System.out.println(
+            exams.stream().collect(partitioningBy(e -> e.getScore() >= 60))
+        );
     }
 }

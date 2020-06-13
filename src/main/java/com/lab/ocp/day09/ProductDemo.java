@@ -20,6 +20,7 @@ public class ProductDemo {
         System.out.println(products);
         
         // 請問總共要花多少錢 ?
-        
+        double sum = products.stream().mapToDouble(p -> p.getAmount() * p.getPrice()).sum();
+        System.out.printf("%.2f\n", sum);
     }
 }

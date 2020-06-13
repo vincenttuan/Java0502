@@ -19,7 +19,12 @@ public class HashSetDemo3 {
                 sum += (Integer)obj;
             }
         }
-        System.out.println(sum);
-        
+        System.out.printf("sum: %d\n", sum);
+        // Java 8 利用 stream()
+        sum = hs.stream()
+                .filter(obj -> obj instanceof Integer)
+                .mapToInt(obj -> Integer.parseInt(obj.toString()))
+                .sum();
+        System.out.printf("sum: %d\n", sum);
     }
 }

@@ -3,15 +3,15 @@
         "name": "Tom",
         "exams": [
             {
-                "subject": "國文",
+                "subject": "chinese",
                 "score": 100
             },
             {
-                "subject": "數學",
+                "subject": "math",
                 "score": 90
             },
             {
-                "subject": "英文",
+                "subject": "english",
                 "score": 80
             }
         ]
@@ -20,15 +20,15 @@
         "name": "Mary",
         "exams": [
             {
-                "subject": "國文",
+                "subject": "chinese",
                 "score": 90
             },
             {
-                "subject": "數學",
+                "subject": "math",
                 "score": 50
             },
             {
-                "subject": "英文",
+                "subject": "english",
                 "score": 30
             }
         ]
@@ -37,15 +37,15 @@
         "name": "John",
         "exams": [
             {
-                "subject": "國文",
+                "subject": "chinese",
                 "score": 90
             },
             {
-                "subject": "數學",
+                "subject": "math",
                 "score": 70
             },
             {
-                "subject": "英文",
+                "subject": "english",
                 "score": 80
             }
         ]

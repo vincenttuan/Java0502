@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Pen",
+        "amount": 10,
+        "price": 6.5
+    },
+    {
+        "name": "Book",
+        "amount": 3,
+        "price": 12.5
+    },
+    {
+        "name": "Ball",
+        "amount": 5,
+        "price": 10.0
+    }
+]

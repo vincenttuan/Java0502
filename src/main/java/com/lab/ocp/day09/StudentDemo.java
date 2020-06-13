@@ -25,12 +25,12 @@ public class StudentDemo {
         
         // 請求出總分最高的人名 ?
         int max = Stream.of(students)
-                .mapToInt(s -> Stream.of(s.getExams()).mapToInt(e -> e.getScore()).sum())
+                .mapToInt(s -> Stream.of(s.getExams()).mapToInt(Exam::getScore).sum())
                 .summaryStatistics()
                 .getMax();
         System.out.println(max);
         Stream.of(students)
-                .filter(s -> Stream.of(s.getExams()).mapToInt(e -> e.getScore()).sum() == max)
+                .filter(s -> Stream.of(s.getExams()).mapToInt(Exam::getScore).sum() == max)
                 .forEach(s -> System.out.println(s.getName()));
         
     }

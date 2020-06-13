@@ -15,5 +15,39 @@
                 "score": 80
             }
         ]
+    },
+    {
+        "name": "Mary",
+        "exams": [
+            {
+                "subject": "國文",
+                "score": 90
+            },
+            {
+                "subject": "數學",
+                "score": 50
+            },
+            {
+                "subject": "英文",
+                "score": 30
+            }
+        ]
+    },
+    {
+        "name": "John",
+        "exams": [
+            {
+                "subject": "國文",
+                "score": 90
+            },
+            {
+                "subject": "數學",
+                "score": 70
+            },
+            {
+                "subject": "英文",
+                "score": 80
+            }
+        ]
     }
 ]

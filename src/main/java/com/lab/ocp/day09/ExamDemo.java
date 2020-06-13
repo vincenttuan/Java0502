@@ -8,8 +8,9 @@ public class ExamDemo {
         Exam e1 = new Exam("國文", 100);
         Exam e2 = new Exam("數學", 80);
         Exam e3 = new Exam("英文", 100);
+        Exam e4 = new Exam("英文", 100);
         Set<Exam> exams = new HashSet<>();
-        exams.add(e1);exams.add(e2);exams.add(e3);
+        exams.add(e1);exams.add(e2);exams.add(e3);exams.add(e4);
         System.out.println(exams);
         
     }

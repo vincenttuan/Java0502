@@ -41,9 +41,11 @@ public class JuniorDemo {
                 }
             }
         }
+        System.out.println("---------------------------------");
         amounts = 0;
         for(Junior j : list) {
-            if(!(j.getSchool().contains("建中")) || !(j.getSchool().contains("成功"))) {
+            if(!(j.getSchool().contains("建中")) && !(j.getSchool().contains("成功")) && !(j.getSchool().contains("男"))) {
+                System.out.println(j);
                 amounts += j.getAmount();
                 if(amounts >= number) {
                     System.out.println(j);

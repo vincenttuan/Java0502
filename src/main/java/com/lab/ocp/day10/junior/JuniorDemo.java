@@ -41,5 +41,15 @@ public class JuniorDemo {
                 }
             }
         }
+        amounts = 0;
+        for(Junior j : list) {
+            if(!(j.getSchool().contains("建中")) || !(j.getSchool().contains("成功"))) {
+                amounts += j.getAmount();
+                if(amounts >= number) {
+                    System.out.println(j);
+                    break;
+                }
+            }
+        }
     }
 }

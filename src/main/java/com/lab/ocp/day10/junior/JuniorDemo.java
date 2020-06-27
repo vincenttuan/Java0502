@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 
 public class JuniorDemo {
     public static void main(String[] args) throws Exception {
@@ -19,13 +20,26 @@ public class JuniorDemo {
             list.add(junior);
         });
         System.out.println(list);
-        // Q1: 分數 22.2 校名 華江
+        // Q1: 分數 22.2 校名 ?
         double score = 22.2;
         String school = "";
-        
-        // Q2: 排名第 8888 校名 ?
-        int number = 8888;
+        Junior junior = list.stream()
+                            .filter(j -> j.getScore() <= score)
+                            .findFirst()
+                            .get();
+        System.out.println(junior);
+        // Q2: 排名第 2000 校名 ?
+        int number = 2000;
         school = "";
-        
+        int amounts = 0;
+        for(Junior j : list) {
+            if(!(j.getSchool().contains("女"))) {
+                amounts += j.getAmount();
+                if(amounts >= number) {
+                    System.out.println(j);
+                    break;
+                }
+            }
+        }
     }
 }

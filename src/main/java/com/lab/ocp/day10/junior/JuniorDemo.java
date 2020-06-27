@@ -30,13 +30,13 @@ public class JuniorDemo {
         System.out.println(junior);
         System.out.println("---------------------------------");
         // Q2: 排名第 2000 校名 ?
-        int number = 2000;
+        int number = 8888;
         school = "";
         int amounts = 0;
         for(Junior j : list) {
             if(!(j.getSchool().contains("女"))) {
-                System.out.println(j);
                 amounts += j.getAmount();
+                System.out.printf("%s amounts: %d\n", j.getSchool(), amounts);
                 if(amounts >= number) {
                     System.out.println(j);
                     break;
@@ -47,8 +47,8 @@ public class JuniorDemo {
         amounts = 0;
         for(Junior j : list) {
             if(!(j.getSchool().contains("建中")) && !(j.getSchool().contains("成功")) && !(j.getSchool().contains("男"))) {
-                System.out.println(j);
                 amounts += j.getAmount();
+                System.out.printf("%s amounts: %d\n", j.getSchool(), amounts);
                 if(amounts >= number) {
                     System.out.println(j);
                     break;

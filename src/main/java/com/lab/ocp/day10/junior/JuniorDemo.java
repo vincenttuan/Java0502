@@ -19,5 +19,13 @@ public class JuniorDemo {
             list.add(junior);
         });
         System.out.println(list);
+        // Q1: 分數 22.2 校名 華江
+        double score = 22.2;
+        String school = "";
+        
+        // Q2: 排名第 8888 校名 ?
+        int number = 8888;
+        school = "";
+        
     }
 }

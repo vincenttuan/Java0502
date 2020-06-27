@@ -29,6 +29,7 @@ public class LinkedListDemo {
             Integer value = iter.previous();
             System.out.printf("%d : %d\n", idx, value);
         }
-        
+        System.out.println(list.get(1));
+        System.out.println(list.size());
     }
 }

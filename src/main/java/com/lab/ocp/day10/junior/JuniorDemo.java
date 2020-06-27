@@ -28,12 +28,14 @@ public class JuniorDemo {
                             .findFirst()
                             .get();
         System.out.println(junior);
+        System.out.println("---------------------------------");
         // Q2: 排名第 2000 校名 ?
         int number = 2000;
         school = "";
         int amounts = 0;
         for(Junior j : list) {
             if(!(j.getSchool().contains("女"))) {
+                System.out.println(j);
                 amounts += j.getAmount();
                 if(amounts >= number) {
                     System.out.println(j);

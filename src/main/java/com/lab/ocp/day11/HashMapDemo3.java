@@ -7,7 +7,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 import java.util.stream.IntStream;
+import static java.util.stream.Collectors.toMap;
 
 public class HashMapDemo3 {
 
@@ -33,6 +36,15 @@ public class HashMapDemo3 {
         System.out.println(list);
         // 分組 bmi 正常放一邊不正常放一邊
         // true:[...], false:[...]
+        Map map = list.stream()
+                .collect(toMap(e -> e.toString(), e->e.get("result")))
+                .entrySet()
+                .stream()
+                .collect(Collectors.groupingBy(Map.Entry::getValue, 
+                                               Collectors.mapping(Map.Entry::getKey, toList())));
+        System.out.println(map);
+        System.out.println("true: " + ((List)map.get(true)).size());
+        System.out.println("false: " + ((List)map.get(false)).size());
         
     }
 }

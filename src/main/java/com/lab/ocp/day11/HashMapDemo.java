@@ -18,5 +18,8 @@ public class HashMapDemo {
         System.out.println(keys);
         Collection values = map.values();
         System.out.println(values);
+        
+        map.entrySet().forEach(System.out::println);
+        map.entrySet().forEach(e -> System.out.println(e.getKey() + ":" + e.getValue()));
     }
 }

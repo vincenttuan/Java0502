@@ -10,6 +10,11 @@ public class LinkedListDemo {
         list.add(90);
         list.add(0, 80);
         System.out.println(list);
-        
+        list.forEach(System.out::println);
+        //int sum = list.stream().mapToInt(item -> item.intValue()).sum();
+        //int sum = list.stream().mapToInt(item -> item).sum();
+        //int sum = list.stream().mapToInt(Integer::valueOf).sum();
+        int sum = list.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
     }
 }

@@ -20,7 +20,11 @@ public class InputDemo {
             int result = x / y[idx];
             System.out.printf("%d / %d = %d\n", x, y[idx], result);
         } catch (InputMismatchException e) {
-            System.out.println("請輸入數字, 錯誤原因:" + e);
+            System.out.println("請輸入數字, 錯誤原因: " + e);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("陣列維度超過最大範圍(0~2), 錯誤原因: " + e);
+        } catch (ArithmeticException e) {
+            System.out.println("發生了分母不可為 0 的數學錯誤,  錯誤原因: " + e);
         }
         System.out.println("Finish");
     }

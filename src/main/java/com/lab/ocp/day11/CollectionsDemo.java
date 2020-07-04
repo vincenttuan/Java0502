@@ -18,6 +18,7 @@ public class CollectionsDemo {
         System.out.println(Collections.max(list)); // 最大值
         Collections.shuffle(list); // 洗牌
         System.out.println(list);
-        
+        Collections.reverse(list); // 反轉
+        System.out.println(list);
     }
 }

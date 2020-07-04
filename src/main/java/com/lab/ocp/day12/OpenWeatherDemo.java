@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 public class OpenWeatherDemo {
     private static String key = "a82e36203e1d003a2e10a186c5e939a3";
     private static String path = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s";
+    private static String path_icon = "http://openweathermap.org/img/wn/%s.png";
     public static void main(String[] args) {
         printWeather("taoyuan,tw");
     }
@@ -38,9 +39,10 @@ public class OpenWeatherDemo {
             JsonArray weather = root.getAsJsonArray("weather");
             JsonObject wObj = weather.get(0).getAsJsonObject();
             String description = wObj.get("description").getAsString();
+            String icon = wObj.get("icon").getAsString();
             
             System.out.printf("溫度: %.2f °C 體感: %.1f °C 濕度: %.1f %% (%s)\n", temp, feels_like, humidity, description);
-            
+            System.out.println(String.format(path_icon, icon));
         } catch (MalformedURLException ex) {
             System.out.println("網路路徑格式錯誤, 錯誤原因: " + ex);
         } catch (IOException ex) {

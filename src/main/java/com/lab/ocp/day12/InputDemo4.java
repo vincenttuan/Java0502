@@ -6,7 +6,11 @@ import java.util.Scanner;
 public class InputDemo4 {
 
     public static void main(String[] args) {
-        input();
+        try {
+            input();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public static void input() {
@@ -19,6 +23,5 @@ public class InputDemo4 {
         int result = x / y[idx];
         System.out.printf("%d / %d = %d\n", x, y[idx], result);
         System.out.println("Finish");
-
     }
 }

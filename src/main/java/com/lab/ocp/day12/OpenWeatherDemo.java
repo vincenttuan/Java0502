@@ -33,7 +33,7 @@ public class OpenWeatherDemo {
             double temp = main.get("temp").getAsDouble() - 273.15;
             double feels_like = main.get("feels_like").getAsDouble() - 273.15;
             double humidity = main.get("humidity").getAsDouble();
-            System.out.printf("溫度: %.1f 體感: %.1f 濕度: %.1f\n", temp, feels_like, humidity);
+            System.out.printf("溫度: %.1f °C 體感: %.1f °C 濕度: %.1f %%\n", temp, feels_like, humidity);
             
         } catch (MalformedURLException ex) {
             System.out.println("網路路徑格式錯誤, 錯誤原因: " + ex);

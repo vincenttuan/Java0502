@@ -24,6 +24,7 @@ public class ReadUser {
             }
             
         } catch (Exception e) {
+            System.out.println(e);
         }
         
     }

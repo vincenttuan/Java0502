@@ -4,15 +4,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginUser {
 
     public static void main(String[] args) {
-        boolean logincheck = login("vincent", "1234");
-        System.out.println(logincheck);
+        try {
+            boolean logincheck = login("vincent", "1234");
+            System.out.println(logincheck);
+        } catch (LoginException ex) {
+            System.out.println("登入錯誤訊息: " + ex.getMessage());
+            ex.how2Do();
+        }
     }
 
-    public static boolean login(String name, String pass) {
+    public static boolean login(String name, String pass) throws LoginException {
         String url = "jdbc:mysql://localhost:3306/ocp?serverTimezone=Asia/Taipei&characterEncoding=utf-8&useUnicode=true";
         String user = "root";
         String password = "12345678";
@@ -24,14 +31,20 @@ public class LoginUser {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 String user_pass = new String(new EncrypDES().Decryptor(rs.getBytes("password")));
-                return user_pass.equals(pass);
+                if (user_pass.equals(pass)) {
+                    return true;
+                } else {
+                    LoginException le = new LoginException("密碼錯誤");
+                    throw le;
+                }
             } else {
-                System.out.println("查無此人");
-                return false;
+                LoginException le = new LoginException("查無此人");
+                throw le;
             }
 
         } catch (Exception e) {
-            return false;
+            LoginException le = new LoginException(e.getMessage());
+            throw le;
         }
     }
 }

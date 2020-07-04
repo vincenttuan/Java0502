@@ -5,8 +5,13 @@ DES演算法為密碼體制中的對稱密碼體制，又被成為美國數據�
 明文按 64 位進行分組, 密鑰長 64 位，密鑰事實上是 56 位參與 DES 運算
 （第 8、16、24、32、40、48、56、64 位是校驗位， 使得每個密鑰都有奇數個 1）
 分組後的明文組和 56 位的密鑰按位替代或交換的方法形成密文組的加密方法。
-*/
-
+ */
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
@@ -30,12 +35,31 @@ public class EncrypDES {
     private byte[] cipherByte;
 
     public EncrypDES()
-            throws NoSuchAlgorithmException, NoSuchPaddingException {
+            throws NoSuchAlgorithmException, NoSuchPaddingException, FileNotFoundException {
         Security.addProvider(new com.sun.crypto.provider.SunJCE());
         // 實例化支持 DES 演算法的密鑰生成器(演算法名稱命名需按規定，否則拋出異常)
-        keygen = KeyGenerator.getInstance("DES");
-        // 生成密鑰
-        deskey = keygen.generateKey();
+        // 密鑰存放地
+        File file = new File("src/main/java/com/lab/ocp/day12/t.key");
+        // 密鑰是否存在
+        if (file.exists()) {
+            try {
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                deskey = (SecretKey)ois.readObject();
+            } catch (Exception e) {
+            }
+        } else {
+            keygen = KeyGenerator.getInstance("DES");
+            // 生成密鑰
+            deskey = keygen.generateKey();
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(deskey);
+            } catch (Exception e) {
+            }
+        }
+
         // 生成 Cipher 物件,指定其支持的 DES 演算法
         c = Cipher.getInstance("DES");
     }
@@ -91,10 +115,9 @@ public class EncrypDES {
         String msg = "巨匠電腦 Java 課程";
         byte[] encontent = de1.Encrytor(msg); // 加密
         byte[] decontent = de1.Decryptor(encontent); // 解密
-        
+
         System.out.println("明文是:" + msg);
         System.out.println("加密後:" + new String(encontent));
         System.out.println("解密後:" + new String(decontent));
     }
 }
-

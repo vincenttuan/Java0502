@@ -1,5 +1,6 @@
 package com.lab.ocp.day12;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.IOException;
@@ -33,7 +34,12 @@ public class OpenWeatherDemo {
             double temp = main.get("temp").getAsDouble() - 273.15;
             double feels_like = main.get("feels_like").getAsDouble() - 273.15;
             double humidity = main.get("humidity").getAsDouble();
-            System.out.printf("溫度: %.1f °C 體感: %.1f °C 濕度: %.1f %%\n", temp, feels_like, humidity);
+            
+            JsonArray weather = root.getAsJsonArray("weather");
+            JsonObject wObj = weather.get(0).getAsJsonObject();
+            String description = wObj.get("description").getAsString();
+            
+            System.out.printf("溫度: %.2f °C 體感: %.1f °C 濕度: %.1f %% (%s)\n", temp, feels_like, humidity, description);
             
         } catch (MalformedURLException ex) {
             System.out.println("網路路徑格式錯誤, 錯誤原因: " + ex);

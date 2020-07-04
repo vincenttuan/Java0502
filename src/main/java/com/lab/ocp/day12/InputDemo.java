@@ -25,6 +25,8 @@ public class InputDemo {
             System.out.println("陣列維度超過最大範圍(0~2), 錯誤原因: " + e);
         } catch (ArithmeticException e) {
             System.out.println("發生了分母不可為 0 的數學錯誤,  錯誤原因: " + e);
+        } catch (Exception e) {
+            System.out.println("其他錯誤, 錯誤原因: " + e);
         }
         System.out.println("Finish");
     }

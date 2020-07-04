@@ -1,5 +1,7 @@
 package com.lab.ocp.day12;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -12,7 +14,7 @@ public class OpenWeatherDemo {
     private static String key = "a82e36203e1d003a2e10a186c5e939a3";
     private static String path = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s";
     public static void main(String[] args) {
-        printWeather("taoyuan");
+        printWeather("taoyuan,tw");
     }
     
     public static void printWeather(String city) {
@@ -25,6 +27,14 @@ public class OpenWeatherDemo {
             //3. 取得 json 文字資料
             String json = new Scanner(is).useDelimiter("\\A").next();
             System.out.println(json);
+            //4. 利用 Gson 分析資料 -> root -> Json 根物件
+            JsonObject root = new JsonParser().parse(json).getAsJsonObject();
+            JsonObject main = root.getAsJsonObject("main");
+            double temp = main.get("temp").getAsDouble() - 273.15;
+            double feels_like = main.get("feels_like").getAsDouble() - 273.15;
+            double humidity = main.get("humidity").getAsDouble();
+            System.out.printf("溫度: %.1f 體感: %.1f 濕度: %.1f\n", temp, feels_like, humidity);
+            
         } catch (MalformedURLException ex) {
             System.out.println("網路路徑格式錯誤, 錯誤原因: " + ex);
         } catch (IOException ex) {

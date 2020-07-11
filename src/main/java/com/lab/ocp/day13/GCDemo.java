@@ -9,6 +9,12 @@ class BigData {
         IntStream.rangeClosed(1, 3000_0000)
                 .forEach((i) -> sb.append(i));
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("BigData 功成身退, 被回收了");
+    }
+    
 }
 
 public class GCDemo {
@@ -24,7 +30,6 @@ public class GCDemo {
         bigData = null;
         System.gc();
         System.out.println("其他處理邏輯");
-        BigData bigData2 = new BigData();
         free = Runtime.getRuntime().freeMemory();
         System.out.printf("free: %d bytes\n", free);
     }

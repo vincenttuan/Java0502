@@ -17,6 +17,11 @@ public class Calc {
         int result = x / y;
         return result;
     }
+    public double div2(int x, int y) {
+        double result = (double)x / y;
+        return result;
+    }
+    
     public int max(int x, int y) {
         return x > y ? x : y;
     }

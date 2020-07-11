@@ -3,6 +3,13 @@ package com.lab.ocp.day14.thread;
 // 實作 run()
 public class Runner extends Thread {
 
+    public Runner() {
+    }
+
+    public Runner(String tname) {
+        super(tname);
+    }
+    
     @Override
     public void run() {
         job();

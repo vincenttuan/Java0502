@@ -60,7 +60,11 @@ public class FightJFrame extends javax.swing.JFrame {
     }
 
     class Running extends Thread {
-
+        int x, y;
+        {
+            x = actor.getX();
+            y = actor.getY();
+        }
         @Override
         public void run() {
             for (int i = 0;;) {
@@ -73,6 +77,10 @@ public class FightJFrame extends javax.swing.JFrame {
                 }
                 i = i % icon_running.length;
                 actor.setIcon(icon_running[i]);
+                // 移動
+                x += 10;
+                actor.setLocation(x, y);
+                System.out.println(actor.getX());
                 try {
                     Thread.sleep(100);
                 } catch (Exception e) {
@@ -121,21 +129,21 @@ public class FightJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(actor, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(actor, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(583, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(actor, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(jButton1)
                 .addGap(23, 23, 23))
         );

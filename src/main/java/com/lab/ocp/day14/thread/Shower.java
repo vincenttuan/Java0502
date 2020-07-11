@@ -9,6 +9,7 @@ class Father extends Thread {
         Worker worker = new Worker();
         worker.start();
         try {
+            //worker.join(6000);
             worker.join();
         } catch (Exception e) {
         }
@@ -21,7 +22,7 @@ class Worker extends Thread {
     @Override
     public void run() {
         System.out.println("工人開始送瓦斯");
-        for(int i=1;i<=5;i++) {
+        for(int i=1;i<=15;i++) {
             try {
                 Thread.sleep(1000);
                 System.out.printf("%d 秒鐘 ", i);

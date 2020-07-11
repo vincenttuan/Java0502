@@ -37,7 +37,7 @@ public class PapayaMilk {
         BuyIce ice = new BuyIce();
         FutureTask<String> task1 = new FutureTask<>(papaya);
         FutureTask<String> task2 = new FutureTask<>(milk);
-        FutureTask<String> task3 = new FutureTask<>(ice, "冰塊");
+        FutureTask<String> task3 = new FutureTask<>(ice, "去冰");
         new Thread(task1).start();
         new Thread(task2).start();
         new Thread(task3).start();
@@ -46,7 +46,7 @@ public class PapayaMilk {
         String data2 = task2.get();
         System.out.printf("買到 %s\n", data2);
         String data3 = task3.get();
-        System.out.printf("買到 %s\n", data3);
+        System.out.printf("我要 %s\n", data3);
         
         System.out.printf("製作 %s\n", (data1 + data2 + data3));
     }

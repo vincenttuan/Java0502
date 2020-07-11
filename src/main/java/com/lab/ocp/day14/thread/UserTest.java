@@ -42,9 +42,10 @@ class User extends Thread {
     int[] u = new int[10];
     @Override
     public void run() {
-        for(int i=0;i<u.length;i++) {
+        for(int i=0;i<u.length;) {
             // print 出每一個 e[i] + b[i] 的資料
             System.out.printf("i=%d 內容=%d\n", i, (egg.e[i] + bread.b[i]));
+            i++;
         }
     }
 }

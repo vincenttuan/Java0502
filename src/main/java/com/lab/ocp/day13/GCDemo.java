@@ -12,6 +12,8 @@ class BigData {
 
     @Override
     protected void finalize() throws Throwable {
+        String tname = Thread.currentThread().getName();
+        System.out.println(tname);
         System.out.println("BigData 功成身退, 被回收了");
     }
     
@@ -19,6 +21,8 @@ class BigData {
 
 public class GCDemo {
     public static void main(String[] args) {
+        String tname = Thread.currentThread().getName();
+        System.out.println(tname);
         long free = Runtime.getRuntime().freeMemory();
         System.out.printf("free: %d bytes\n", free);
         System.gc();

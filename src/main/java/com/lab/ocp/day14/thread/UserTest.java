@@ -13,7 +13,7 @@ class Egg extends Thread {
                 Thread.sleep(new Random().nextInt(5000));
                 int value = new Random().nextInt(100) + 1;
                 e[i] = value;
-                System.out.printf("e[%d] = %d\n", i, value);
+                System.out.printf("煎蛋 e[%d] = %d\n", i, value);
             } catch (Exception e) {
             }
         }
@@ -31,7 +31,7 @@ class Bread extends Thread {
                 Thread.sleep(new Random().nextInt(5000));
                 int value = new Random().nextInt(100) + 1;
                 b[i] = value;
-                System.out.printf("b[%d] = %d\n", i, value);
+                System.out.printf("麵包 b[%d] = %d\n", i, value);
             } catch (Exception e) {
             }
         }
@@ -60,7 +60,7 @@ class User extends Thread {
             }
             if(egg.e[i] != 0 && bread.b[i] != 0) {
                 u[i] = egg.e[i] + bread.b[i];
-                System.out.printf("\tu[%d] = %d\n", i, u[i]);
+                System.out.printf("\t三明治 u[%d] = %d\n", i, u[i]);
                 i++;
             }
         }
@@ -68,7 +68,7 @@ class User extends Thread {
 }
 
 public class UserTest {
-
+    
     public static void main(String[] args) {
         Egg egg = new Egg();
         Bread bread = new Bread();

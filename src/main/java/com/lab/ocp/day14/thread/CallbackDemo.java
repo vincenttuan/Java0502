@@ -16,12 +16,15 @@ class Put extends Thread {
     @Override
     public void run() {
         int value = new Random().nextInt(100);
+        System.out.printf("value= %d\n", value);
         box.set(value);
     }
-    
 }
 
-
 public class CallbackDemo {
-    
+    public static void main(String[] args) {
+        Box box = (value) -> System.out.println(value * 30.1);
+        Put put = new Put(box);
+        put.start();
+    }
 }

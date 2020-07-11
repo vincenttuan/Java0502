@@ -49,9 +49,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="actor">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x5c0f;&#x660e;"/>
-      </Properties>
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="actorMousePressed"/>
       </Events>

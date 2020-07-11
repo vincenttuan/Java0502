@@ -23,7 +23,7 @@ public class FightJFrame extends javax.swing.JFrame {
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_5.png"),};
 
     private ImageIcon[] icon_running = {
-        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\running_0.png"),
+        //new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\running_0.png"),
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\running_1.png"),
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\running_2.png"),
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\running_3.png"),
@@ -104,7 +104,6 @@ public class FightJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        actor.setText("小明");
         actor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 actorMousePressed(evt);

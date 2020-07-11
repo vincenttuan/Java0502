@@ -39,7 +39,7 @@ public class FightJFrame extends javax.swing.JFrame {
             for (int i = 0;;) {
                 if (isRunning) {
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(1);
                     } catch (Exception e) {
                     }
                     continue;
@@ -66,7 +66,7 @@ public class FightJFrame extends javax.swing.JFrame {
             for (int i = 0;;) {
                 if (!isRunning) {
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(1);
                     } catch (Exception e) {
                     }
                     continue;

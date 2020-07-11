@@ -14,7 +14,7 @@ class BuyPapaya implements Callable<String> {
 class BuyMilk implements Callable<String> {
     @Override
     public String call() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         return "牛奶";
     }
 }

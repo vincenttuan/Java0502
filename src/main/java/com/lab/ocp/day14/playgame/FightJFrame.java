@@ -3,6 +3,7 @@ package com.lab.ocp.day14.playgame;
 import javax.swing.ImageIcon;
 
 public class FightJFrame extends javax.swing.JFrame {
+    boolean isReady = true;
     private ImageIcon[] icon_ready = {
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\ready_0.png"),
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\ready_1.png"),
@@ -12,12 +13,24 @@ public class FightJFrame extends javax.swing.JFrame {
         new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\ready_5.png"),
     };
     
+    private ImageIcon[] icon_fight = {
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_0.png"),
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_1.png"),
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_2.png"),
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_3.png"),
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_4.png"),
+        new ImageIcon("src\\main\\java\\com\\lab\\ocp\\day14\\playgame\\images\\fight_5.png"),
+    };
+    
     class Ready extends Thread {
         @Override
         public void run() {
             for(int i=0;;i++) {
                 i = i % icon_ready.length;
-                actor.setIcon(icon_ready[i]);
+                if(isReady) 
+                    actor.setIcon(icon_ready[i]);
+                else
+                    actor.setIcon(icon_fight[i]);
                 try {
                     Thread.sleep(150);
                 } catch (Exception e) {
@@ -46,6 +59,11 @@ public class FightJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         actor.setText("小明");
+        actor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                actorMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,6 +84,10 @@ public class FightJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actorMousePressed
+        isReady = !isReady;
+    }//GEN-LAST:event_actorMousePressed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,8 @@ public class Number {
     public static boolean gameover = false;
     private int ans = 77;
     private boolean isUser = true; // User 先猜
+    public int min = 0;
+    public int max = 100;
     
     public synchronized void userGuess(int num) throws Exception {
         while(!isUser) {

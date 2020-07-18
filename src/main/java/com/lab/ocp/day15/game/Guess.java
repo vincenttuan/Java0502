@@ -15,11 +15,14 @@ public class Guess implements Runnable {
         String tname = Thread.currentThread().getName();
         try {
             while (!Number.gameover) {
+                int min = number.min;
+                int max = number.max;
+                System.out.printf("%d ~ %d 之間猜一數字: \n", min, max);
                 if (tname.equals("pc")) {
-                    int num = new Random().nextInt(100);
+                    int num = new Random().nextInt(max - min - 1) + min + 1;
                     number.pcGuess(num);
                 } else {
-                    int num = new Random().nextInt(100);
+                    int num = new Random().nextInt(max - min - 1) + min + 1;
                     number.userGuess(num);
                 }
             }

@@ -18,9 +18,9 @@ public class Number {
             System.out.println("User 答對了");
             gameover = true;
         } else if(num > ans) {
-            max = ans;
+            max = num;
         } else {
-            min = ans;
+            min = num;
         }
         
         isUser = false;
@@ -37,9 +37,9 @@ public class Number {
             System.out.println("PC 答對了");
             gameover = true;
         } else if(num > ans) {
-            max = ans;
+            max = num;
         } else {
-            min = ans;
+            min = num;
         }
         isUser = true;
         notifyAll();

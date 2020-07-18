@@ -1,4 +1,4 @@
-package com.lab.ocp.day15.barrier;
+package com.lab.ocp.day15.barrier.car;
 
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;

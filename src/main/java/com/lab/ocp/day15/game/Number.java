@@ -1,6 +1,6 @@
 package com.lab.ocp.day15.game;
 
-public class Guess {
+public class Number {
     
     public static boolean gameover = false;
     private int ans = 77;

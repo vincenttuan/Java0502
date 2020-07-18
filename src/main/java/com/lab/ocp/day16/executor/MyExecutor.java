@@ -6,7 +6,10 @@ public class MyExecutor implements Executor {
 
     @Override
     public void execute(Runnable r) {
-        new Thread(r).start();
+        Thread t = new Thread(r);
+        t.setName("xxx");
+        t.setPriority(10);
+        t.start();
     }
     
 }

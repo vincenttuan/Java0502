@@ -1,5 +1,8 @@
 package com.lab.ocp.day15.wait_notify;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Eat implements Runnable {
     private Cookie cookie;
 
@@ -10,7 +13,10 @@ public class Eat implements Runnable {
     @Override
     public void run() {
         for(int i=1;i<=10;i++) {
-            cookie.eat(i);
+            try {
+                cookie.eat(i);
+            } catch (InterruptedException ex) {
+            }
         }
     }
     

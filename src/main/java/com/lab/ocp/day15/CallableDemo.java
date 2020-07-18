@@ -26,8 +26,5 @@ public class CallableDemo {
             new Thread(task).start();
             System.out.println(task.get());
         }
-        
-        
     }
-    
 }

@@ -31,7 +31,7 @@ public class Report {
 
     @Override
     public String toString() {
-        return "Report{" + "content=" + content + ", price=" + price + ", author=" + author + '}';
+        return author + "說:" + content + ", 價格:" + price + "元";
     }
     
     

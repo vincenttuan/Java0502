@@ -6,6 +6,12 @@ import java.util.concurrent.CyclicBarrier;
 public class WriterContent extends Thread {
     private CyclicBarrier cb;
     private Report report;
+
+    public WriterContent(CyclicBarrier cb, Report report) {
+        this.cb = cb;
+        this.report = report;
+    }
+    
     @Override
     public void run() {
         try {

@@ -5,7 +5,9 @@ public class BallGame implements Runnable {
 
     @Override
     public void run() {
-        get();
+        while (amount > 0) {            
+            get();
+        }
     }
     
     public void get() {

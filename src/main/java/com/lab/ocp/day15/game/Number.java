@@ -20,17 +20,21 @@ public class Number {
         //int num = new Random().nextInt(max - min - 1) + min + 1;
         int num = new Scanner(System.in).nextInt();
         System.out.printf("User 猜: %d\n", num);
-        if(num == ans) {
-            System.out.println("User 答對了");
-            gameover = true;
-        } else if(num > ans) {
-            max = num;
+        if(num > min && num < max) {
+            if(num == ans) {
+                System.out.println("User 答對了");
+                gameover = true;
+            } else if(num > ans) {
+                max = num;
+            } else {
+                min = num;
+            }
+            isUser = false;
+            notifyAll();
         } else {
-            min = num;
+            System.out.println("範圍錯誤, 請重新輸入!");
+            userGuess();
         }
-        
-        isUser = false;
-        notifyAll();
     }
     
     public synchronized void pcGuess() throws Exception {

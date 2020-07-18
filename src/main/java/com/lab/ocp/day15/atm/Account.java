@@ -19,9 +19,9 @@ public class Account {
         if (cur_balance >= money) { // 帳戶餘額 >= 提款金額
             cur_balance -= money; // 進行扣款
             balance = cur_balance; // 回寫帳戶餘額
-            System.out.printf("%s 提款 $%d 成功 帳戶餘額 $d\n", tname, money, balance);
+            System.out.printf("%s 提款 $%d 成功 帳戶餘額 $%d\n", tname, money, balance);
         } else {
-            System.out.printf("%s 提款 $%d 失敗(餘額不足) 帳戶餘額 $d\n", tname, money, balance);
+            System.out.printf("%s 提款 $%d 失敗(餘額不足) 帳戶餘額 $%d\n", tname, money, balance);
         }
     }
 }

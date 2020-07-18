@@ -14,8 +14,8 @@ public class Number {
     public synchronized void userGuess() throws Exception {
         while(!isUser) {
             wait();
-            if(gameover) return;
         }
+        if(gameover) return;
         System.out.printf("User 需在 %d ~ %d 之間猜一數字: \n", min, max);
         //int num = new Random().nextInt(max - min - 1) + min + 1;
         int num = new Scanner(System.in).nextInt();
@@ -36,8 +36,8 @@ public class Number {
     public synchronized void pcGuess() throws Exception {
         while(isUser) {
             wait();
-            if(gameover) return;
         }
+        if(gameover) return;
         System.out.printf("PC 需在 %d ~ %d 之間猜一數字: \n", min, max);
         int num = new Random().nextInt(max - min - 1) + min + 1;
         System.out.printf("PC 猜: %d\n", num);

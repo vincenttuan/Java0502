@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class BallGame implements Runnable {
-    private int amount = 100;
+    private int amount = 1000;
     private Map<String, Integer> map = Collections.synchronizedMap(new LinkedHashMap<>());
     //private Map<String, Integer> map = new Hashtable<>();
     @Override

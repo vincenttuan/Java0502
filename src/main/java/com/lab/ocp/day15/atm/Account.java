@@ -10,7 +10,7 @@ public class Account {
     public void print() { // 查詢帳戶餘額
         System.out.printf("帳戶餘額: %d\n", balance);
     }
-    public void widthdraw(int money) { // 提款方法(提款金額=money)
+    public synchronized void widthdraw(int money) { // 提款方法(提款金額=money)
         String tname = Thread.currentThread().getName(); // 提款人
         // 目前帳戶餘額
         int cur_balance = balance;

@@ -11,6 +11,8 @@ public class Withdraw implements Runnable {
     
     @Override
     public void run() {
+        // 模擬去銀行的時間
+        for(int i=0;i<Integer.MAX_VALUE;i++);
         account.widthdraw(money);
     }
     

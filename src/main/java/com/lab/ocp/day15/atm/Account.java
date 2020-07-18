@@ -2,6 +2,11 @@ package com.lab.ocp.day15.atm;
 
 public class Account {
     private int balance; // 帳戶餘額
+
+    public Account(int balance) {
+        this.balance = balance;
+    }
+    
     public void print() { // 查詢帳戶餘額
         System.out.printf("帳戶餘額: %d\n", balance);
     }

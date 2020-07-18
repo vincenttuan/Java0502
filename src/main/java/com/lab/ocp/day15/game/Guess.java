@@ -25,6 +25,7 @@ public class Guess implements Runnable {
                     int num = new Random().nextInt(max - min - 1) + min + 1;
                     number.userGuess(num);
                 }
+                Thread.sleep(1000);
             }
         } catch (Exception e) {
         }

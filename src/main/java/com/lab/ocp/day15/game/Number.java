@@ -17,7 +17,12 @@ public class Number {
         if(num == ans) {
             System.out.println("User 答對了");
             gameover = true;
+        } else if(num > ans) {
+            max = ans;
+        } else {
+            min = ans;
         }
+        
         isUser = false;
         notifyAll();
     }
@@ -31,6 +36,10 @@ public class Number {
         if(num == ans) {
             System.out.println("PC 答對了");
             gameover = true;
+        } else if(num > ans) {
+            max = ans;
+        } else {
+            min = ans;
         }
         isUser = true;
         notifyAll();

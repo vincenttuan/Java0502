@@ -1,6 +1,6 @@
 package com.lab.ocp.day15;
 
-public class BallGame extends Thread {
+public class BallGame implements Runnable {
     private int amount = 10;
 
     @Override

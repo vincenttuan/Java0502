@@ -12,7 +12,6 @@ public class User {
             // 等待兌獎
             System.out.println("等待兌獎, 兌獎完畢後按下Enter繼續");
             new Scanner(System.in).nextLine();
-            guess = 0;
         } while (true);
     }
 }

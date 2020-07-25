@@ -21,6 +21,7 @@ public class ScheduleDemo {
                 } else {
                     winner = "User 輸";
                 }
+                User.guess = 0;
             }
             System.out.printf("%s 開獎: %d %s\n", sdf.format(new Date()), lotto, winner);
         };

@@ -3,7 +3,7 @@ package com.lab.ocp.day16.forkjoin;
 import java.util.concurrent.RecursiveAction;
 
 public class Sum extends RecursiveAction{
-    final int A = 2; // 門檻值
+    final int A = 3; // 門檻值
     int stIndex, lstIndex;
     int[] data;
 

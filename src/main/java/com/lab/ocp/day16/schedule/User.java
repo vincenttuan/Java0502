@@ -10,8 +10,12 @@ public class User {
             System.out.println("請下注(1~9):");
             guess = sc.nextInt();
             // 等待兌獎
-            System.out.println("等待兌獎, 兌獎完畢後按下Enter繼續");
-            new Scanner(System.in).nextLine();
+            while (guess != 0) {                
+                try {
+                    Thread.sleep(1);
+                } catch (Exception e) {
+                }
+            }
         } while (true);
     }
 }

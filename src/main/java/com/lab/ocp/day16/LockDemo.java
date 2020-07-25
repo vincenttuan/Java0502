@@ -18,7 +18,7 @@ class Lotto implements Runnable {
     public void run() {
         try {
             lock.lock();
-            IntStream.rangeClosed(1, 5)
+            IntStream.rangeClosed(1, 100)
                     .forEach((i) -> System.out.printf("%s 第 %d 組號碼: %d\n", 
                                     name, i, new Random().nextInt(100)));
         } catch (Exception e) {

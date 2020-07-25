@@ -12,8 +12,15 @@ public class ScheduleDemo {
     public static void main(String[] args) {
         Runnable r = () -> {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            Date begin = new Date();
             int lotto = new Random().nextInt(9) + 1; // 1~9
-            System.out.printf("%s 開獎: %d\n", sdf.format(new Date()), lotto);
+            int delayTime = new Random().nextInt(100000);
+            try {
+                Thread.sleep(delayTime);
+            } catch (Exception e) {
+            }
+            Date end = new Date();
+            System.out.printf("%s 開獎: %d delatTime:%d (%s)\n", sdf.format(begin), lotto, delayTime, end);
         };
         
         ScheduledExecutorService service = Executors.newScheduledThreadPool(3);

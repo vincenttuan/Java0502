@@ -13,19 +13,21 @@ public class ScheduleDemo {
         Runnable r = () -> {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             Date begin = new Date();
+            System.out.printf("%s ", sdf.format(begin));
             int lotto = new Random().nextInt(9) + 1; // 1~9
-            int delayTime = new Random().nextInt(100000);
+            int delayTime = new Random().nextInt(10_000);
             try {
                 Thread.sleep(delayTime);
             } catch (Exception e) {
             }
             Date end = new Date();
-            System.out.printf("%s 開獎: %d delatTime:%d (%s)\n", sdf.format(begin), lotto, delayTime, sdf.format(end));
+            System.out.printf("開獎: %d delatTime:%d (%s)\n", lotto, delayTime, sdf.format(end));
         };
         
         ScheduledExecutorService service = Executors.newScheduledThreadPool(3);
         // 3 秒後執行第一次開獎, 爾後每 5 秒執行開獎乙次
-        service.scheduleWithFixedDelay(r, 3, 5, TimeUnit.SECONDS);
+        //service.scheduleWithFixedDelay(r, 3, 5, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(r, 3, 5, TimeUnit.SECONDS);
         
     }
 }

@@ -1,5 +1,6 @@
 package com.lab.ocp.day16.order;
 
+import java.util.Scanner;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -14,7 +15,9 @@ class Job implements Callable<Boolean> {
     @Override
     public Boolean call() throws Exception {
         Thread.sleep(1000);
-        System.out.printf("%s 做完工作了\n", name);
+        Scanner sc = new Scanner(System.in);
+        System.out.print(name + " 請猜一數字:");
+        if(sc.nextInt() == 77) return false;
         return true;
     }
 }

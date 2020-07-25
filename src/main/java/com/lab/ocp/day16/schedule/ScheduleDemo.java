@@ -15,7 +15,7 @@ public class ScheduleDemo {
             Date begin = new Date();
             System.out.printf("%s ", sdf.format(begin));
             int lotto = new Random().nextInt(9) + 1; // 1~9
-            int delayTime = new Random().nextInt(10_000);
+            int delayTime = new Random().nextInt(6_500);
             try {
                 Thread.sleep(delayTime);
             } catch (Exception e) {

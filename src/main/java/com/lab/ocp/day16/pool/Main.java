@@ -7,13 +7,15 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws Exception {
         ExecutorService service = Executors.newCachedThreadPool();
+        //ExecutorService service = Executors.newFixedThreadPool(3);
+        //ExecutorService service = Executors.newSingleThreadExecutor();
         service.submit(new Task());
         service.submit(new LongTask());
         service.submit(new LongTask());
         service.submit(new Task());
         service.submit(new Task());
         service.submit(new LongTask());
-        
+        System.out.printf("執行緒數量:%d\n", Thread.activeCount());
         // 關閉 Pool
         service.shutdown();
         

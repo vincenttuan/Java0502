@@ -20,7 +20,7 @@ public class ScheduleDemo {
             } catch (Exception e) {
             }
             Date end = new Date();
-            System.out.printf("%s 開獎: %d delatTime:%d (%s)\n", sdf.format(begin), lotto, delayTime, end);
+            System.out.printf("%s 開獎: %d delatTime:%d (%s)\n", sdf.format(begin), lotto, delayTime, sdf.format(end));
         };
         
         ScheduledExecutorService service = Executors.newScheduledThreadPool(3);

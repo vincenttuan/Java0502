@@ -9,7 +9,7 @@ public class LongTask implements Runnable {
         System.out.printf("長任務開始\n");
         int n = new Random().nextInt(9000);
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(5);
         } catch (Exception e) {
         }
         n += 1000;

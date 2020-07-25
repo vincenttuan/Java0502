@@ -29,6 +29,8 @@ public class ScheduleDemo {
         // 3 秒後執行第一次開獎, 爾後每 5 秒執行開獎乙次
         service.scheduleWithFixedDelay(r, 3, 5, TimeUnit.SECONDS);
         
+        // 呼叫使用者進入遊戲
+        User.main(null);
         
     }
 }

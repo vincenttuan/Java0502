@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class InvokeAllDemo {
+public class InvokeAnyDemo {
     public static void main(String[] args) throws Exception {
         List<Callable<Integer>> list = new ArrayList<>();
         list.add(()->new Random().nextInt(9)+1);
@@ -18,10 +18,8 @@ public class InvokeAllDemo {
         list.add(()->new Random().nextInt(9)+1);
         
         ExecutorService service = Executors.newCachedThreadPool();
-        List<Future<Integer>> futures = service.invokeAll(list);
-        for(Future<Integer> future : futures) {
-            System.out.println(future.get());
-        }
+        Integer num = service.invokeAny(list);
+        System.out.println(num);
         service.shutdown();
     }
 }

@@ -13,7 +13,16 @@ public class ScheduleDemo {
         Runnable r = () -> {
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             int lotto = new Random().nextInt(9) + 1; // 1~9
-            System.out.printf("%s 開獎: %d\n", sdf.format(new Date()), lotto);
+            // 兌獎
+            String winner = "";
+            if(User.guess > 0) { // 有人下注
+                if(User.guess == lotto) {
+                    winner = "User 贏";
+                } else {
+                    winner = "User 輸";
+                }
+            }
+            System.out.printf("%s 開獎: %d %s\n", sdf.format(new Date()), lotto, winner);
         };
         
         ScheduledExecutorService service = Executors.newScheduledThreadPool(3);

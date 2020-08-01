@@ -19,11 +19,13 @@ public class GetWebArticle {
             String content = doc.select("meta[property=\"og:description\"]").attr("content");
             System.out.println(title);
             System.out.println(content);
-            File file = new File("src\\main\\java\\com\\lab\\ocp\\day18\\" + title + ".txt");
+            File file = new File("src\\main\\java\\com\\lab\\ocp\\day18\\news.txt");
             try(FileWriter fw = new FileWriter(file)) {
+                fw.write(title + "\n\n");
                 fw.write(content);
                 System.out.println("寫入完成");
             } catch (Exception e) {
+                e.printStackTrace();
             }
             
         } catch (Exception e) {

@@ -8,7 +8,7 @@ import java.net.URL;
 public class GetWebImage {
     public static void main(String[] args) {
         // 網路來源
-        String path = "https://uc.udn.com.tw/photo/2019/10/15/99/6943615.jpg";
+        String path = "https://previews.123rf.com/images/popcar/popcar1511/popcar151100028/48549386-retro-car-.jpg";
         // 寫入檔案
         File file = new File("src\\main\\java\\com\\lab\\ocp\\day18\\car.jpg");
         // InputStream 讀取串流

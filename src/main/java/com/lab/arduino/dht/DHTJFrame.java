@@ -1,16 +1,20 @@
 package com.lab.arduino.dht;
 
+import com.firebase.net.thegreshams.firebase4j.model.FirebaseResponse;
 import com.firebase.net.thegreshams.firebase4j.service.Firebase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class DHTJFrame extends javax.swing.JFrame {
     String firebase_baseUrl = "https://iot-pcschool.firebaseio.com/dht";
     String token = "5lXpVgfZlmpjCNR4YzIDMDrh29Mw7kAp3zzhnSC4";
+    Firebase firebase;
     public DHTJFrame() {
         initComponents();
         // 建立 firebase 物件
-        final Firebase firebase;
         try {
             firebase = new Firebase(firebase_baseUrl, token);    
         } catch (Throwable e) {
@@ -27,6 +31,17 @@ public class DHTJFrame extends javax.swing.JFrame {
                 randomN.setText(dht[3]);
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 curTime.setText(sdf.format(new Date()));
+                // 上傳到 firebase
+                Map<String, Object> dataMap = new LinkedHashMap<>();
+                dataMap.put("humd", Double.parseDouble(dht[0]));
+                dataMap.put("temp1", Double.parseDouble(dht[1]));
+                dataMap.put("temp2", Double.parseDouble(dht[2]));
+                try {
+                    FirebaseResponse response = firebase.patch(dataMap);
+                    System.out.println(firebase.get("humd").getRawBody());
+                    System.out.println(firebase.get("temp1").getRawBody());
+                    System.out.println(firebase.get("temp2").getRawBody());
+                } catch(Throwable e) {}
             }
         };
         try {

@@ -28,7 +28,7 @@ public class DHTJFrame extends javax.swing.JFrame {
                 humd.setText(dht[0]);
                 temp1.setText(dht[1]);
                 temp2.setText(dht[2]);
-                randomN.setText(dht[3]);
+                randomN.setText(dht[3].trim());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 curTime.setText(sdf.format(new Date()));
                 // 上傳到 firebase
@@ -36,7 +36,7 @@ public class DHTJFrame extends javax.swing.JFrame {
                 dataMap.put("humd", Double.parseDouble(dht[0]));
                 dataMap.put("temp1", Double.parseDouble(dht[1]));
                 dataMap.put("temp2", Double.parseDouble(dht[2]));
-                dataMap.put("randomN", Double.parseDouble(dht[3]));
+                dataMap.put("randomN", Integer.parseInt(dht[3].trim()));
                 try {
                     FirebaseResponse response = firebase.patch(dataMap);
                     System.out.println(firebase.get("humd").getRawBody());

@@ -31,13 +31,13 @@ public class DHTJFrame extends javax.swing.JFrame {
                 randomN.setText(dht[3].trim());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 curTime.setText(sdf.format(new Date()));
-                // 上傳到 firebase
-                Map<String, Object> dataMap = new LinkedHashMap<>();
-                dataMap.put("humd", Double.parseDouble(dht[0]));
-                dataMap.put("temp1", Double.parseDouble(dht[1]));
-                dataMap.put("temp2", Double.parseDouble(dht[2]));
-                dataMap.put("randomN", Integer.parseInt(dht[3].trim()));
                 try {
+                    // 上傳到 firebase
+                    Map<String, Object> dataMap = new LinkedHashMap<>();
+                    dataMap.put("humd", Double.parseDouble(dht[0]));
+                    dataMap.put("temp1", Double.parseDouble(dht[1]));
+                    dataMap.put("temp2", Double.parseDouble(dht[2]));
+                    dataMap.put("randomN", Integer.parseInt(dht[3].trim()));
                     FirebaseResponse response = firebase.patch(dataMap);
                     System.out.println(firebase.get("humd").getRawBody());
                     System.out.println(firebase.get("temp1").getRawBody());

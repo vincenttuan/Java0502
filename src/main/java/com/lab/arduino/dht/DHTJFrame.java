@@ -1,5 +1,8 @@
 package com.lab.arduino.dht;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DHTJFrame extends javax.swing.JFrame {
 
     public DHTJFrame() {
@@ -8,7 +11,12 @@ public class DHTJFrame extends javax.swing.JFrame {
         Callback callback = new Callback() {
             @Override
             public void getValue(String fulldata) {
-                curTime.setText(fulldata);
+                String[] dht = fulldata.split(",");
+                humd.setText(dht[0]);
+                temp1.setText(dht[1]);
+                temp2.setText(dht[2]);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                curTime.setText(sdf.format(new Date()));
             }
         };
         try {

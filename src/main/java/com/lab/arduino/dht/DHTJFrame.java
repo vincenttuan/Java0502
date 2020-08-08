@@ -36,11 +36,13 @@ public class DHTJFrame extends javax.swing.JFrame {
                 dataMap.put("humd", Double.parseDouble(dht[0]));
                 dataMap.put("temp1", Double.parseDouble(dht[1]));
                 dataMap.put("temp2", Double.parseDouble(dht[2]));
+                dataMap.put("randomN", Double.parseDouble(dht[3]));
                 try {
                     FirebaseResponse response = firebase.patch(dataMap);
                     System.out.println(firebase.get("humd").getRawBody());
                     System.out.println(firebase.get("temp1").getRawBody());
                     System.out.println(firebase.get("temp2").getRawBody());
+                    System.out.println(firebase.get("randomN").getRawBody());
                 } catch(Throwable e) {}
             }
         };
@@ -103,7 +105,7 @@ public class DHTJFrame extends javax.swing.JFrame {
 
         curTime.setText("2020/8/8 14:45");
 
-        randomN.setFont(new java.awt.Font("Calibri", 0, 100)); // NOI18N
+        randomN.setFont(new java.awt.Font("Calibri", 0, 90)); // NOI18N
         randomN.setForeground(new java.awt.Color(153, 153, 153));
         randomN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         randomN.setText("00");
@@ -139,9 +141,8 @@ public class DHTJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(curTime, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)))
-                .addGap(18, 18, 18)
                 .addComponent(randomN, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

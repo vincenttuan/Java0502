@@ -1,6 +1,5 @@
 package com.lab.arduino.dht;
 
-import com.lab.arduino.test.*;
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
@@ -12,8 +11,11 @@ import java.io.OutputStream;
 
 public class TwoWaySerialComm {
 
-    public TwoWaySerialComm() {
+    private static Callback callback;
+
+    public TwoWaySerialComm(Callback callback) {
         super();
+        this.callback = callback;
     }
 
     void connect(String portName) throws Exception {
@@ -40,7 +42,8 @@ public class TwoWaySerialComm {
     }
 
     /**
-     *      */
+     *
+     */
     public static class SerialReader implements Runnable {
 
         InputStream in;
@@ -52,18 +55,34 @@ public class TwoWaySerialComm {
         public void run() {
             byte[] buffer = new byte[1024];
             int len = -1;
+            StringBuilder sb = new StringBuilder();
             try {
                 while ((len = this.in.read(buffer)) > -1) {
-                    System.out.print(new String(buffer, 0, len));
+                    //System.out.print(new String(buffer, 0, len));
+                    String data = new String(buffer, 0, len);
+                    //System.out.print(data);
+                    if (data.trim().equals("") && sb.length() > 5) {
+                        // fulldata = 收到完整的 Arduino 資訊
+                        String fulldata = sb.toString().replace("\r", "").replace("\n", "");
+                        //System.out.printf("收到資料: %s, 資料長度: %d\n", fulldata, fulldata.length());
+                        if (callback != null) {
+                            callback.getValue(fulldata);
+                        }
+                        sb = new StringBuilder();
+                    } else {
+                        sb.append(data);
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
     }
 
     /**
-     *      */
+     *
+     */
     public static class SerialWriter implements Runnable {
 
         OutputStream out;
@@ -74,22 +93,21 @@ public class TwoWaySerialComm {
 
         public void run() {
             try {
-                int c = 0;
-                while ((c = System.in.read()) > -1) {
-                    this.out.write(c);
+                int c = -1;
+                while (true) {
+                    if (callback != null) {
+                        c = callback.getRelayValue() ? 48 : 49;
+                        this.out.write(c);
+                        this.out.write(10);
+                        //System.out.println(c);
+                    }
+                    Thread.sleep(1000);
                 }
-            } catch (IOException e) {
+
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            (new TwoWaySerialComm()).connect("COM5");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
 }
